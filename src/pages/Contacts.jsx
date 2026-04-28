@@ -32,7 +32,7 @@ const Contacts = () => {
                 <div className="p-5 bg-secondary/10 rounded-2xl text-secondary"><Phone size={32} /></div>
                 <div>
                   <p className="text-sm text-muted uppercase tracking-widest mb-1">Phone</p>
-                  <p className="text-xl font-medium">+1 (604) 555-0199</p>
+                  <p className="text-xl font-medium">+1 (604) 967-2295</p>
                 </div>
               </div>
               <div className="flex items-center gap-8">

@@ -25,28 +25,28 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Quick Links</h4>
-            <ul className="flex flex-col gap-3 text-sm text-muted">
-              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Services</Link></li>
-              <li><Link to="/contacts" className="hover:text-primary transition-colors">Contacts</Link></li>
+            <h4 className="footer-title">Quick Links</h4>
+            <ul className="link-list">
+              <li><Link to="/" className="link-item">Home</Link></li>
+              <li><Link to="/about" className="link-item">About Us</Link></li>
+              <li><Link to="/services" className="link-item">Services</Link></li>
+              <li><Link to="/contacts" className="link-item">Contacts</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">Contact Us</h4>
-            <ul className="flex flex-col gap-4 text-sm text-muted">
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-primary" />
+            <h4 className="footer-title">Contact Us</h4>
+            <ul className="link-list">
+              <li className="contact-item">
+                <Mail size={18} className="contact-icon" />
                 <span>admin@triole-it.com</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-primary" />
-                <span>+1 (604) 555-0199</span>
+              <li className="contact-item">
+                <Phone size={18} className="contact-icon" />
+                <span>+1 (604) 967-2295</span>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin size={16} className="text-primary" />
+              <li className="contact-item">
+                <MapPin size={18} className="contact-icon" />
                 <span>Vancouver, BC, Canada</span>
               </li>
             </ul>
