@@ -62,7 +62,7 @@ button {
 
 ::-webkit-scrollbar-thumb {
   background: #27272A;
-  border-radius: 4px;
+  border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -80,7 +80,7 @@ button {
 }
 
 .glass {
-  background: rgba(24, 24, 27, 0.7);
+  background: rgba(24, 24, 27);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -192,7 +192,7 @@ button {
 }
 
 .rounded-lg {
-  border-radius: 0.5rem;
+  border-radius: 15px;
 }
 
 .inset-0 {
@@ -347,7 +347,7 @@ button {
 }
 
 .rounded-full {
-  border-radius: 9999px;
+  border-radius: 15px;
 }
 
 .shadow-lg {
@@ -619,7 +619,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
+  border-radius: 15px;
   font-weight: 700;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -643,7 +643,7 @@ button {
 .btn-primary {
   background-color: var(--primary);
   color: white;
-  padding: 1rem 2rem;
+  padding: 10px;
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
 }
 
@@ -676,11 +676,12 @@ button {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 1.5rem;
+  border-radius: 15px;
   /* 24px - rounded-3xl approx */
   padding: 2rem;
   transition: all 0.3s ease;
-  margin: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card-interactive:hover {
@@ -694,7 +695,7 @@ button {
   /* 384px */
   height: 24rem;
   background-color: rgba(168, 85, 247, 0.2);
-  border-radius: 9999px;
+  border-radius: 15px;
   filter: blur(120px);
   pointer-events: none;
 }
@@ -704,7 +705,7 @@ button {
   width: 24rem;
   height: 24rem;
   background-color: rgba(236, 72, 153, 0.1);
-  border-radius: 9999px;
+  border-radius: 15px;
   filter: blur(120px);
   pointer-events: none;
 }
