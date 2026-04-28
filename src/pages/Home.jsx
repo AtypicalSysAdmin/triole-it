@@ -29,7 +29,7 @@ const Home = () => {
         <div className="glow-primary top-1/4 -left-20"></div>
         <div className="glow-secondary bottom-1/4 -right-20"></div>
 
-        <div className="container-custom grid md:grid-cols-2 gap-12 items-center">
+        <div className="container-custom grid md:grid-cols-2 gap-20 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
