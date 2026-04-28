@@ -1,0 +1,52 @@
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { AlertCircle, Home } from 'lucide-react';
+
+const NotFound = () => {
+  return (
+    <div className="pt-32 pb-24 px-6 min-h-[80vh] flex items-center justify-center">
+      <div className="container max-w-2xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="glass p-10 md:p-16 rounded-lg text-center relative overflow-hidden neon-border"
+        >
+          {/* Background decoration */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary/20 rounded-full blur-3xl"></div>
+
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="p-5 rounded-full bg-primary/10 text-primary drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+              <AlertCircle size={64} strokeWidth={1.5} />
+            </div>
+          </motion.div>
+
+          <h1 className="text-6xl md:text-8xl font-extrabold mb-4 gradient-text neon-glow tracking-tighter">
+            404
+          </h1>
+          
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
+            Page Not Found
+          </h2>
+          
+          <p className="text-muted text-lg mb-10 max-w-md mx-auto">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+          </p>
+
+          <Link to="/" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+            <Home size={20} />
+            Back to Home
+          </Link>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default NotFound;
