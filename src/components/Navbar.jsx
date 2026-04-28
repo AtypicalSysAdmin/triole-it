@@ -59,7 +59,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-foreground bg-transparent" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden nav-mobile-toggle text-foreground" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
