@@ -389,3 +389,40 @@ button {
   filter: blur(120px);
   pointer-events: none;
 }
+
+/* Logo Focus Effect */
+.logo-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 1999;
+  cursor: pointer;
+}
+
+.logo-active {
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.logo-wrapper {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 51;
+}
+
+.logo-wrapper.focused {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) scale(5);
+  z-index: 2000;
+}
+
+@media (max-width: 768px) {
+  .logo-wrapper.focused {
+    transform: translate(-50%, -50%) scale(3);
+  }
+}

@@ -6,15 +6,19 @@ import logo from '../assets/logo.png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isLogoFocused, setIsLogoFocused] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      if (isLogoFocused) {
+        setIsLogoFocused(false);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isLogoFocused]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -24,16 +28,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'} ${isLogoFocused ? 'logo-active' : ''}`}>
+      {isLogoFocused && <div className="logo-backdrop" onClick={() => setIsLogoFocused(false)}></div>}
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center gap-2 group">
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-lg p-1 transition-all"
-          >
-            <img src={logo} alt="Triole IT Logo" className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" />
-            <span className="text-xl font-bold gradient-text tracking-tighter">TRIOLE IT</span>
-          </Link>
+          <div className={`logo-wrapper ${isLogoFocused ? 'focused' : ''}`} onClick={() => setIsLogoFocused(!isLogoFocused)}>
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="Triole IT Logo" className="h-10 w-auto transition-transform duration-300" />
+              <span className="text-xl font-bold gradient-text tracking-tighter">TRIOLE IT</span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Menu */}
