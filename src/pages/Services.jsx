@@ -54,11 +54,11 @@ const Services = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24">
-      <div className="container mx-auto px-6">
+    <div className="page-padding">
+      <div className="container-custom">
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-bold mb-6">Our <span className="gradient-text">Services</span></h1>
-          <p className="text-xl text-muted max-w-2xl mx-auto">
+          <h1 className="h1-page">Our <span className="gradient-text">Services</span></h1>
+          <p className="text-lead">
             We provide a comprehensive suite of IT services designed to protect, optimize, and grow your business.
           </p>
         </div>
@@ -71,7 +71,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-8 glass rounded-3xl border border-white/5 hover:border-primary/50 transition-all flex flex-col items-start gap-6 group"
+              className="card-interactive flex flex-col items-start gap-6 group"
             >
               <div 
                 className="p-4 rounded-2xl transition-transform group-hover:scale-110"
@@ -80,19 +80,19 @@ const Services = () => {
                 {service.icon}
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{service.desc}</p>
+                <h3 className="h3-card">{service.title}</h3>
+                <p className="text-body leading-relaxed">{service.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-24 p-12 glass rounded-3xl text-center border border-primary/20 neon-border">
-          <h2 className="text-3xl font-bold mb-6">Need a Custom Solution?</h2>
-          <p className="text-muted mb-10 max-w-xl mx-auto">
+        <div className="mt-24 card-glass text-center border-primary/20 neon-border">
+          <h2 className="h2-section">Need a Custom Solution?</h2>
+          <p className="text-lead !text-base mb-10">
             Every business is unique. We can create a tailored service package that meets your specific requirements and budget.
           </p>
-          <a href="/contacts" className="px-10 py-4 rounded-full bg-primary text-white font-bold hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+          <a href="/contacts" className="btn-base btn-primary">
             Book a Consultation
           </a>
         </div>

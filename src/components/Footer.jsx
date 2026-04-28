@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0D0D10] border-t border-border pt-16 pb-8">
-      <div className="container mx-auto px-6">
+      <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
           <div className="max-w-sm">
             <Link to="/" className="flex items-center gap-2 mb-6">

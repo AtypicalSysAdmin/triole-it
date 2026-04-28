@@ -3,11 +3,11 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contacts = () => {
   return (
-    <div className="pt-32 pb-24">
-      <div className="container mx-auto px-6">
+    <div className="page-padding">
+      <div className="container-custom">
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-bold mb-6">Get in <span className="gradient-text">Touch</span></h1>
-          <p className="text-xl text-muted max-w-2xl mx-auto">
+          <h1 className="h1-page">Get in <span className="gradient-text">Touch</span></h1>
+          <p className="text-lead">
             Ready to secure your infrastructure? Contact us today for a free consultation.
           </p>
         </div>
@@ -17,7 +17,7 @@ const Contacts = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="glass p-10 md:p-16 rounded-3xl border border-white/5"
+            className="card-glass p-10 md:p-16"
           >
             <h3 className="text-2xl font-bold mb-12 text-center">Contact Information</h3>
             <div className="flex flex-col gap-10">
@@ -49,7 +49,7 @@ const Contacts = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-12 p-8 glass rounded-3xl border border-white/5 text-center"
+            className="mt-12 card-glass p-8 text-center"
           >
             <p className="text-muted">
               We usually respond to all inquiries within 24 business hours.

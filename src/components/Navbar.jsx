@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container-custom flex justify-between items-center">
         <div className="flex items-center gap-2 group">
           <Link 
             to="/" 
@@ -49,7 +49,7 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/contacts" className="px-5 py-2 rounded-full glass border border-primary/50 text-sm font-semibold hover:bg-primary/10 transition-all neon-border">
+          <Link to="/contacts" className="btn-base btn-glass btn-sm border-primary/50 neon-border">
             Get Started
           </Link>
         </div>

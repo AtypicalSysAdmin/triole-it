@@ -4,13 +4,13 @@ import { AlertCircle, Home } from 'lucide-react';
 
 const NotFound = () => {
   return (
-    <div className="pt-32 pb-24 px-6 min-h-[80vh] flex items-center justify-center">
-      <div className="container max-w-2xl">
+    <div className="page-padding px-6 min-h-[80vh] flex items-center justify-center">
+      <div className="container-custom max-w-2xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="glass p-10 md:p-16 rounded-lg text-center relative overflow-hidden neon-border"
+          className="card-glass p-10 md:p-16 text-center relative overflow-hidden neon-border"
         >
           {/* Background decoration */}
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
@@ -35,11 +35,11 @@ const NotFound = () => {
             Page Not Found
           </h2>
           
-          <p className="text-muted text-lg mb-10 max-w-md mx-auto">
+          <p className="text-lead mb-10">
             The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
           </p>
 
-          <Link to="/" className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background">
+          <Link to="/" className="btn-base btn-primary gap-2">
             <Home size={20} />
             Back to Home
           </Link>

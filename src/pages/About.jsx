@@ -10,16 +10,16 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24">
-      <div className="container mx-auto px-6">
+    <div className="page-padding">
+      <div className="container-custom">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl font-bold mb-6">About <span className="gradient-text">Triole IT</span></h1>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
+          <h1 className="h1-page">About <span className="gradient-text">Triole IT</span></h1>
+          <p className="text-lead">
             Founded on the principles of innovation and integrity, we help businesses navigate the complex digital landscape with confidence.
           </p>
         </motion.div>
@@ -27,10 +27,10 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-muted mb-6">
+            <p className="text-body mb-6">
               At Triole IT, our mission is to empower organizations by providing reliable, scalable, and secure technology solutions. We believe that technology should be an enabler, not a bottleneck.
             </p>
-            <p className="text-muted mb-8">
+            <p className="text-body mb-8">
               We work closely with our clients to understand their unique challenges and goals, delivering custom-tailored strategies that produce measurable results.
             </p>
             <div className="grid grid-cols-2 gap-6">
@@ -67,20 +67,20 @@ const About = () => {
         <section>
           <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Us?</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 glass rounded-2xl border border-white/5">
+            <div className="card-glass">
               <Users className="text-primary mb-6" size={40} />
-              <h3 className="text-xl font-bold mb-4">Expert Team</h3>
-              <p className="text-muted text-sm">Our consultants are certified experts with decades of combined experience in the IT industry.</p>
+              <h3 className="h3-card">Expert Team</h3>
+              <p className="text-body">Our consultants are certified experts with decades of combined experience in the IT industry.</p>
             </div>
-            <div className="p-8 glass rounded-2xl border border-white/5">
+            <div className="card-glass">
               <Award className="text-secondary mb-6" size={40} />
-              <h3 className="text-xl font-bold mb-4">Proven Results</h3>
-              <p className="text-muted text-sm">We have a track record of delivering successful digital transformations for companies of all sizes.</p>
+              <h3 className="h3-card">Proven Results</h3>
+              <p className="text-body">We have a track record of delivering successful digital transformations for companies of all sizes.</p>
             </div>
-            <div className="p-8 glass rounded-2xl border border-white/5">
+            <div className="card-glass">
               <Zap className="text-primary mb-6" size={40} />
-              <h3 className="text-xl font-bold mb-4">Modern Stack</h3>
-              <p className="text-muted text-sm">We stay at the forefront of technology, using the latest tools and methodologies to solve your problems.</p>
+              <h3 className="h3-card">Modern Stack</h3>
+              <p className="text-body">We stay at the forefront of technology, using the latest tools and methodologies to solve your problems.</p>
             </div>
           </div>
         </section>
