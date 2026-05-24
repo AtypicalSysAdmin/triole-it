@@ -10,17 +10,17 @@ const Footer = () => {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
           <div className="max-w-sm">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <img src={logo} alt="Triole IT" className="h-8 w-auto" />
+            <Link to="/" className="flex items-center gap-2 mb-6" aria-label="Triole IT Home">
+              <img src={logo} alt="Triole IT Logo" className="h-8 w-auto" />
               <span className="text-xl font-bold gradient-text">TRIOLE IT</span>
             </Link>
             <p className="text-muted text-sm mb-6">
               Empowering businesses with cutting-edge IT solutions, cybersecurity, and cloud infrastructure management.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-muted hover:text-primary transition-colors"><MessageSquare size={20} /></a>
-              <a href="#" className="text-muted hover:text-primary transition-colors"><Globe size={20} /></a>
-              <a href="#" className="text-muted hover:text-primary transition-colors"><ArrowRight size={20} /></a>
+              <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Send Message"><MessageSquare size={20} /></a>
+              <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Global Presence"><Globe size={20} /></a>
+              <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Learn More"><ArrowRight size={20} /></a>
             </div>
           </div>
 

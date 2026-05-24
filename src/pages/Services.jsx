@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Shield, Cloud, Monitor, Lock, Database, Code, Settings, PieChart } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Services = () => {
   const allServices = [
@@ -53,8 +54,35 @@ const Services = () => {
     }
   ];
 
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Triole IT Services Catalog",
+    "description": "Comprehensive IT services including Cybersecurity Solutions, Cloud Infrastructure, Managed IT Services, and Custom Software Development.",
+    "itemListElement": allServices.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.desc,
+        "provider": {
+          "@type": "Organization",
+          "name": "Triole IT",
+          "url": "https://triole-it.com"
+        }
+      }
+    }))
+  };
+
   return (
     <div className="page-padding">
+      <SEO 
+        title="IT & Cybersecurity Services | Triole IT"
+        description="Explore our professional technology offerings including cybersecurity, cloud migration, managed IT services, network security, and custom software development."
+        keywords="cybersecurity solutions, cloud migration, managed IT, custom software development, IT support, network security, IT consulting"
+        schemaMarkup={servicesSchema}
+      />
       <div className="container-custom">
         <div className="text-center mb-20">
           <h1 className="h1-page">Our <span className="gradient-text">Services</span></h1>
@@ -63,6 +91,9 @@ const Services = () => {
           </p>
         </div>
 
+        <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: '0' }}>
+          Our IT Service Catalog
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {allServices.map((service, i) => (
             <motion.div

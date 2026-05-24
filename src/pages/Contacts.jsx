@@ -1,9 +1,36 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contacts = () => {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Us - Triole IT",
+    "description": "Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or call +1 (604) 967-2295.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Triole IT",
+      "url": "https://triole-it.com",
+      "telephone": "+1-604-967-2295",
+      "email": "admin@triole-it.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vancouver",
+        "addressRegion": "BC",
+        "addressCountry": "Canada"
+      }
+    }
+  };
+
   return (
     <div className="page-padding">
+      <SEO 
+        title="Contact Us for Free IT Consultation | Triole IT"
+        description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or call +1 (604) 967-2295."
+        keywords="contact IT support, free IT consultation, Vancouver IT company, IT support contact, tech support Vancouver"
+        schemaMarkup={contactSchema}
+      />
       <div className="container-custom">
         <div className="text-center mb-20">
           <h1 className="h1-page">Get in <span className="gradient-text">Touch</span></h1>
@@ -19,7 +46,7 @@ const Contacts = () => {
             transition={{ duration: 0.6 }}
             className="card-glass p-10 md:p-16"
           >
-            <h3 className="text-2xl font-bold mb-12 text-center">Contact Information</h3>
+            <h2 className="text-2xl font-bold mb-12 text-center">Contact Information</h2>
             <div className="flex flex-col gap-10">
               <div className="flex items-center gap-8">
                 <div className="p-5 bg-primary/10 rounded-2xl text-primary"><Mail size={32} /></div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, Users, Zap, Award } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About = () => {
   const stats = [
@@ -9,8 +10,29 @@ const About = () => {
     { label: "Global Offices", value: "3" },
   ];
 
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us - Triole IT",
+    "description": "Learn about Triole IT's mission, values, and expert team of IT consultants. Empowering organizations through reliable, scalable, and secure technology solutions.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Triole IT",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://triole-it.com/src/assets/logo.png"
+      }
+    }
+  };
+
   return (
     <div className="page-padding">
+      <SEO 
+        title="About Us | Triole IT Solutions"
+        description="Learn about Triole IT's mission, values, and expert team of IT consultants. Empowering organizations through reliable, scalable, and secure technology solutions."
+        keywords="about Triole IT, IT consulting experts, technology mission, digital transformation, IT history"
+        schemaMarkup={aboutSchema}
+      />
       <div className="container-custom">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

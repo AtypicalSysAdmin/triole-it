@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AlertCircle, Home } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const NotFound = () => {
   return (
     <div className="page-padding px-6 min-h-[80vh] flex items-center justify-center">
+      <SEO 
+        title="Page Not Found | Triole IT"
+        description="The page you are looking for does not exist on Triole IT website."
+        robots="noindex, nofollow"
+      />
       <div className="container-custom max-w-2xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Cpu, Cloud, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const services = [
@@ -21,8 +22,50 @@ const Home = () => {
     }
   ];
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Triole IT",
+    "image": "https://triole-it.com/src/assets/logo.png",
+    "@id": "https://triole-it.com/#localbusiness",
+    "url": "https://triole-it.com",
+    "telephone": "+1-604-967-2295",
+    "email": "admin@triole-it.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver",
+      "addressRegion": "BC",
+      "postalCode": "V6B",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.2827,
+      "longitude": -123.1207
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  };
+
   return (
     <div className="home-page">
+      <SEO 
+        title="Triole IT | Premium Managed IT Services & Cybersecurity Solutions"
+        description="Triole IT provides next-generation managed IT services, advanced cybersecurity solutions, and scalable cloud infrastructure for modern enterprises."
+        keywords="IT infrastructure, cybersecurity, cloud solutions, IT consulting, managed IT services, tech solutions"
+        schemaMarkup={homeSchema}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         {/* Background Glows */}
