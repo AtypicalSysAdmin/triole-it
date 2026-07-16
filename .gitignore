@@ -32,3 +32,4 @@ public/build/
 .wrangler/state/
 .wrangler/tmp/
 src/users.json
+graphify-out/

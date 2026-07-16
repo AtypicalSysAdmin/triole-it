@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, MessageSquare, Globe, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, MessageSquare, Globe, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const Footer = () => {
@@ -40,10 +40,6 @@ const Footer = () => {
               <li className="contact-item">
                 <Mail size={18} className="contact-icon" />
                 <span>admin@triole-it.com</span>
-              </li>
-              <li className="contact-item">
-                <Phone size={18} className="contact-icon" />
-                <span>+1 (604) 967-2295</span>
               </li>
               <li className="contact-item">
                 <MapPin size={18} className="contact-icon" />

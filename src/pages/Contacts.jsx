@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Contacts = () => {
@@ -7,12 +7,11 @@ const Contacts = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Us - Triole IT",
-    "description": "Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or call +1 (604) 967-2295.",
+    "description": "Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com.",
     "mainEntity": {
       "@type": "Organization",
       "name": "Triole IT",
       "url": "https://triole-it.com",
-      "telephone": "+1-604-967-2295",
       "email": "admin@triole-it.com",
       "address": {
         "@type": "PostalAddress",
@@ -27,7 +26,7 @@ const Contacts = () => {
     <div className="page-padding">
       <SEO 
         title="Contact Us for Free IT Consultation | Triole IT"
-        description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or call +1 (604) 967-2295."
+        description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com."
         keywords="contact IT support, free IT consultation, Vancouver IT company, IT support contact, tech support Vancouver"
         schemaMarkup={contactSchema}
       />
@@ -56,14 +55,7 @@ const Contacts = () => {
                 </div>
               </div>
               <div className="flex items-center gap-8">
-                <div className="p-5 bg-secondary/10 rounded-2xl text-secondary"><Phone size={32} /></div>
-                <div>
-                  <p className="text-sm text-muted uppercase tracking-widest mb-1">Phone</p>
-                  <p className="text-xl font-medium">+1 (604) 967-2295</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-8">
-                <div className="p-5 bg-primary/10 rounded-2xl text-primary"><MapPin size={32} /></div>
+                <div className="p-5 bg-secondary/10 rounded-2xl text-secondary"><MapPin size={32} /></div>
                 <div>
                   <p className="text-sm text-muted uppercase tracking-widest mb-1">Office</p>
                   <p className="text-xl font-medium">Vancouver, BC, Canada</p>

@@ -26,10 +26,9 @@ const Home = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Triole IT",
-    "image": "https://triole-it.com/src/assets/logo.png",
+    "image": "https://triole-it.com/logo.png",
     "@id": "https://triole-it.com/#localbusiness",
     "url": "https://triole-it.com",
-    "telephone": "+1-604-967-2295",
     "email": "admin@triole-it.com",
     "priceRange": "$$",
     "address": {

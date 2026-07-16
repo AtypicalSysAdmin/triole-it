@@ -20,7 +20,7 @@ const About = () => {
       "name": "Triole IT",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://triole-it.com/src/assets/logo.png"
+        "url": "https://triole-it.com/logo.png"
       }
     }
   };

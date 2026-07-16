@@ -49,7 +49,7 @@ const SEO = ({
     // 4. Set Open Graph Meta Tags
     const finalOgTitle = ogTitle || title || 'Triole IT | Premium Managed IT Services';
     const finalOgDesc = ogDescription || description || 'Next-generation technology solutions for modern enterprises.';
-    const finalOgImage = ogImage || 'https://triole-it.com/src/assets/logo.png';
+    const finalOgImage = ogImage || 'https://triole-it.com/logo.png';
 
     setMetaTag('property', 'og:title', finalOgTitle);
     setMetaTag('property', 'og:description', finalOgDesc);
