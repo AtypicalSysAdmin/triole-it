@@ -30,6 +30,9 @@ const Home = () => {
     "@id": "https://triole-it.com/#localbusiness",
     "url": "https://triole-it.com",
     "email": "admin@triole-it.com",
+    "sameAs": [
+      "https://www.instagram.com/triole_it/"
+    ],
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

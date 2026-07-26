@@ -2,6 +2,24 @@ import { Link } from 'react-router-dom';
 import { Mail, MapPin, MessageSquare, Globe, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo.png';
 
+const InstagramIcon = ({ size = 24 }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+  </svg>
+);
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -18,9 +36,9 @@ const Footer = () => {
               Empowering businesses with cutting-edge IT solutions, cybersecurity, and cloud infrastructure management.
             </p>
             <div className="flex gap-4">
+              <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors" aria-label="Instagram"><InstagramIcon size={20} /></a>
               <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Send Message"><MessageSquare size={20} /></a>
               <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Global Presence"><Globe size={20} /></a>
-              <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Learn More"><ArrowRight size={20} /></a>
             </div>
           </div>
 
@@ -40,6 +58,10 @@ const Footer = () => {
               <li className="contact-item">
                 <Mail size={18} className="contact-icon" />
                 <span>admin@triole-it.com</span>
+              </li>
+              <li className="contact-item">
+                <InstagramIcon size={18} className="contact-icon" />
+                <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@triole_it</a>
               </li>
               <li className="contact-item">
                 <MapPin size={18} className="contact-icon" />
