@@ -16,7 +16,7 @@ const SEO = ({
 
   useEffect(() => {
     // 1. Update Document Title
-    const finalTitle = title || 'Triole IT | Premium Managed IT Services & Cybersecurity Solutions';
+    const finalTitle = title || 'Triole IT | Local IT Support & Computer Repairs';
     document.title = finalTitle;
 
     // Helper function to create/update meta tags
@@ -32,10 +32,10 @@ const SEO = ({
     };
 
     // 2. Set Standard Meta Tags
-    setMetaTag('name', 'description', description || 'Triole IT provides next-generation managed IT services, advanced cybersecurity solutions, and scalable cloud infrastructure for modern enterprises.');
-    setMetaTag('name', 'keywords', keywords || 'IT infrastructure, cybersecurity, cloud solutions, IT consulting, managed IT services, tech solutions');
+    setMetaTag('name', 'description', description || 'Triole IT provides friendly, professional, and affordable local IT support, computer and laptop repairs, network setup, and troubleshooting for home users and small businesses.');
+    setMetaTag('name', 'keywords', keywords || 'local IT support, computer repair, laptop repair, home wifi setup, tech help, small business IT support, Vancouver');
     setMetaTag('name', 'robots', robots || 'index, follow');
-    setMetaTag('name', 'author', 'Triole IT Solutions Inc.');
+    setMetaTag('name', 'author', 'Triole IT');
 
     // 3. Set Canonical URL Link Tag
     let canonicalLink = document.querySelector('link[rel="canonical"]');
@@ -47,8 +47,8 @@ const SEO = ({
     canonicalLink.setAttribute('href', canonicalUrl);
 
     // 4. Set Open Graph Meta Tags
-    const finalOgTitle = ogTitle || title || 'Triole IT | Premium Managed IT Services';
-    const finalOgDesc = ogDescription || description || 'Next-generation technology solutions for modern enterprises.';
+    const finalOgTitle = ogTitle || title || 'Triole IT | Local IT Support & Computer Repairs';
+    const finalOgDesc = ogDescription || description || 'Friendly, professional, and affordable local IT support and computer repairs for home users and small businesses.';
     const finalOgImage = ogImage || 'https://triole-it.com/logo.png';
 
     setMetaTag('property', 'og:title', finalOgTitle);

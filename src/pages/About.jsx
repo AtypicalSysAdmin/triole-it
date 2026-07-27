@@ -4,17 +4,17 @@ import SEO from '../components/SEO';
 
 const About = () => {
   const stats = [
-    { label: "Years Experience", value: "12+" },
+    { label: "Years Experience", value: "10+" },
     { label: "Happy Clients", value: "500+" },
-    { label: "Projects Done", value: "1.2k" },
-    { label: "Global Offices", value: "3" },
+    { label: "Devices Repaired", value: "1.5k+" },
+    { label: "Areas Served", value: "Vancouver" },
   ];
 
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Us - Triole IT",
-    "description": "Learn about Triole IT's mission, values, and expert team of IT consultants. Empowering organizations through reliable, scalable, and secure technology solutions.",
+    "description": "Learn about Triole IT's mission, values, and our team of friendly tech support experts. Providing reliable, local computer repairs and IT support.",
     "publisher": {
       "@type": "Organization",
       "name": "Triole IT",
@@ -28,9 +28,9 @@ const About = () => {
   return (
     <div className="page-padding">
       <SEO 
-        title="About Us | Triole IT Solutions"
-        description="Learn about Triole IT's mission, values, and expert team of IT consultants. Empowering organizations through reliable, scalable, and secure technology solutions."
-        keywords="about Triole IT, IT consulting experts, technology mission, digital transformation, IT history"
+        title="About Us | Triole IT Support & Repairs"
+        description="Learn about Triole IT's mission, values, and our team of friendly tech support experts. Providing reliable, local computer repairs and IT support."
+        keywords="about Triole IT, local IT support, computer repair experts, technology mission, local PC repairs, Vancouver tech help"
         schemaMarkup={aboutSchema}
       />
       <div className="container-custom">
@@ -42,7 +42,7 @@ const About = () => {
         >
           <h1 className="h1-page">About <span className="gradient-text">Triole IT</span></h1>
           <p className="text-lead">
-            Founded on the principles of innovation and integrity, we help businesses navigate the complex digital landscape with confidence.
+            Founded on the principles of friendly service and reliable support, we help local home users and small businesses solve their technology issues with confidence.
           </p>
         </motion.div>
 
@@ -50,24 +50,24 @@ const About = () => {
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
             <p className="text-body mb-6">
-              At Triole IT, our mission is to empower organizations by providing reliable, scalable, and secure technology solutions. We believe that technology should be an enabler, not a bottleneck.
+              At Triole IT, our mission is to provide friendly, straightforward, and affordable IT support. We believe that getting your computer fixed or setting up your Wi-Fi network shouldn't be stressful or break the bank.
             </p>
             <p className="text-body mb-8">
-              We work closely with our clients to understand their unique challenges and goals, delivering custom-tailored strategies that produce measurable results.
+              We work closely with local families and small business owners to understand their technical problems, providing clear solutions in plain language—no confusing jargon.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-primary/10 rounded-lg"><Target className="text-primary" size={24} /></div>
                 <div>
                   <h4 className="font-bold">Focused</h4>
-                  <p className="text-xs text-muted">Clear goals and execution.</p>
+                  <p className="text-xs text-muted">Solving the root cause of your tech problems.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="p-2 bg-secondary/10 rounded-lg"><Zap className="text-secondary" size={24} /></div>
                 <div>
                   <h4 className="font-bold">Fast</h4>
-                  <p className="text-xs text-muted">Agile delivery and response.</p>
+                  <p className="text-xs text-muted">Quick diagnostics and responsive support.</p>
                 </div>
               </div>
             </div>
@@ -91,18 +91,18 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="card-glass">
               <Users className="text-primary mb-6" size={40} />
-              <h3 className="h3-card">Expert Team</h3>
-              <p className="text-body">Our consultants are certified experts with decades of combined experience in the IT industry.</p>
+              <h3 className="h3-card">Friendly Experts</h3>
+              <p className="text-body">Our technicians are certified professionals who are experienced in diagnosing and repairing all kinds of hardware and software issues.</p>
             </div>
             <div className="card-glass">
               <Award className="text-secondary mb-6" size={40} />
-              <h3 className="h3-card">Proven Results</h3>
-              <p className="text-body">We have a track record of delivering successful digital transformations for companies of all sizes.</p>
+              <h3 className="h3-card">Proven Track Record</h3>
+              <p className="text-body">We have helped hundreds of local families and small businesses keep their computers, networks, and tech devices running smoothly.</p>
             </div>
             <div className="card-glass">
               <Zap className="text-primary mb-6" size={40} />
-              <h3 className="h3-card">Modern Stack</h3>
-              <p className="text-body">We stay at the forefront of technology, using the latest tools and methodologies to solve your problems.</p>
+              <h3 className="h3-card">Transparent Pricing</h3>
+              <p className="text-body">We explain the issue and the cost upfront, offering affordable flat-rate repairs with no surprise fees or hourly overages.</p>
             </div>
           </div>
         </section>

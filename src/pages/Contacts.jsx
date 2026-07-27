@@ -25,7 +25,7 @@ const Contacts = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Us - Triole IT",
-    "description": "Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or follow @triole_it on Instagram.",
+    "description": "Get in touch with Triole IT's support team in Vancouver for local IT support, computer repairs, and network troubleshooting.",
     "mainEntity": {
       "@type": "Organization",
       "name": "Triole IT",
@@ -46,16 +46,16 @@ const Contacts = () => {
   return (
     <div className="page-padding">
       <SEO 
-        title="Contact Us for Free IT Consultation | Triole IT"
-        description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or follow @triole_it on Instagram."
-        keywords="contact IT support, free IT consultation, Vancouver IT company, IT support contact, tech support Vancouver, Instagram @triole_it"
+        title="Contact Us | Local IT Support & Computer Repairs"
+        description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com or follow @triole_it on Instagram for local tech help."
+        keywords="contact IT support, computer repair contact, Vancouver IT company, IT support contact, tech support Vancouver, Instagram @triole_it"
         schemaMarkup={contactSchema}
       />
       <div className="container-custom">
         <div className="text-center mb-20">
           <h1 className="h1-page">Get in <span className="gradient-text">Touch</span></h1>
           <p className="text-lead">
-            Ready to secure your infrastructure? Contact us today for a free consultation.
+            Have a tech issue, a slow network, or a broken computer? Contact us today for fast, friendly support.
           </p>
         </div>
 
@@ -93,8 +93,8 @@ const Contacts = () => {
               <div className="flex items-center gap-8">
                 <div className="p-5 bg-primary/10 rounded-2xl text-primary"><MapPin size={32} /></div>
                 <div>
-                  <p className="text-sm text-muted uppercase tracking-widest mb-1">Office</p>
-                  <p className="text-xl font-medium">Vancouver, BC, Canada</p>
+                  <p className="text-sm text-muted uppercase tracking-widest mb-1">Service Area</p>
+                  <p className="text-xl font-medium">Vancouver, BC & Surrounding Areas</p>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Contacts = () => {
             className="mt-12 card-glass p-8 text-center"
           >
             <p className="text-muted">
-              We usually respond to all inquiries within 24 business hours.
+              We usually respond to all inquiries within 2-4 hours during business days.
             </p>
           </motion.div>
         </div>

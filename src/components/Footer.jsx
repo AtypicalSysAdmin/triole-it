@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, MessageSquare, Globe, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, MessageSquare } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const InstagramIcon = ({ size = 24 }) => (
@@ -33,12 +33,11 @@ const Footer = () => {
               <span className="text-xl font-bold gradient-text">TRIOLE IT</span>
             </Link>
             <p className="text-muted text-sm mb-6">
-              Empowering businesses with cutting-edge IT solutions, cybersecurity, and cloud infrastructure management.
+              Friendly, reliable local IT support, computer repairs, and network troubleshooting for home users and small businesses.
             </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors" aria-label="Instagram"><InstagramIcon size={20} /></a>
               <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Send Message"><MessageSquare size={20} /></a>
-              <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Global Presence"><Globe size={20} /></a>
             </div>
           </div>
 
@@ -65,14 +64,14 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <MapPin size={18} className="contact-icon" />
-                <span>Vancouver, BC, Canada</span>
+                <span>Vancouver, BC & Surrounding Areas</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center text-xs text-muted">
-          <p>&copy; {currentYear} Triole IT Solutions Inc. All rights reserved.</p>
+          <p>&copy; {currentYear} Triole IT. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,55 +1,55 @@
 import { motion } from 'framer-motion';
-import { Shield, Cloud, Monitor, Lock, Database, Code, Settings, PieChart } from 'lucide-react';
+import { Laptop, Wifi, ShieldAlert, Database, Printer, Settings, Briefcase, BookOpen } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Services = () => {
   const allServices = [
     {
-      title: "Cybersecurity Solutions",
-      desc: "Protecting your business from sophisticated cyber threats with multi-layered security protocols, penetration testing, and 24/7 monitoring.",
-      icon: <Shield size={40} />,
+      title: "Computer Repair & Upgrades",
+      desc: "Fast hardware diagnostics, laptop screen replacements, keyboard repairs, and SSD/RAM upgrades to speed up sluggish devices.",
+      icon: <Laptop size={40} />,
       color: "var(--primary)"
     },
     {
-      title: "Cloud Infrastructure",
-      desc: "Migration, management, and optimization of cloud environments (AWS, Azure, Google Cloud) for maximum efficiency and cost-savings.",
-      icon: <Cloud size={40} />,
+      title: "Wi-Fi & Network Setup",
+      desc: "Setting up routers, Wi-Fi mesh systems, range extenders, and troubleshooting connectivity issues or internet dropouts.",
+      icon: <Wifi size={40} />,
       color: "var(--secondary)"
     },
     {
-      title: "Managed IT Services",
-      desc: "Full-scale management of your IT operations, providing proactive support and maintenance to ensure zero downtime.",
-      icon: <Settings size={40} />,
+      title: "Virus & Malware Removal",
+      desc: "Comprehensive system scans to safely remove spyware, adware, viruses, and ransomware, and installing reliable antivirus protection.",
+      icon: <ShieldAlert size={40} />,
       color: "var(--primary)"
     },
     {
       title: "Data Backup & Recovery",
-      desc: "Robust backup strategies and disaster recovery plans to safeguard your business continuity in any situation.",
+      desc: "Recovering lost files from failing or crashed drives, and setting up automatic cloud or physical backup systems for peace of mind.",
       icon: <Database size={40} />,
       color: "var(--secondary)"
     },
     {
-      title: "Network Security",
-      desc: "Securing your internal and external networks with advanced firewalls, VPNs, and intrusion detection systems.",
-      icon: <Lock size={40} />,
+      title: "Printer & Device Setup",
+      desc: "Configuring home and office printers, scanner setups, smart TVs, security cameras, and other smart home accessories.",
+      icon: <Printer size={40} />,
       color: "var(--primary)"
     },
     {
-      title: "IT Consulting",
-      desc: "Strategic planning and technology roadmap development to align your IT investments with your business goals.",
-      icon: <PieChart size={40} />,
+      title: "OS & Software Troubleshooting",
+      desc: "Resolving Windows/Mac operating system errors, email client configurations, software installation errors, and app updates.",
+      icon: <Settings size={40} />,
       color: "var(--secondary)"
     },
     {
-      title: "Application Support",
-      desc: "End-to-end support for your business applications, ensuring they are always up-to-date and performing optimally.",
-      icon: <Monitor size={40} />,
+      title: "Small Business IT Support",
+      desc: "Setting up office computers, shared network storage (NAS), email domains, user accounts, and local network security solutions.",
+      icon: <Briefcase size={40} />,
       color: "var(--primary)"
     },
     {
-      title: "Custom Software",
-      desc: "Bespoke software development services to automate workflows and solve specific business challenges.",
-      icon: <Code size={40} />,
+      title: "Tech Training & Guidance",
+      desc: "Patient, jargon-free tutoring to help you or your team learn how to use new devices, operating systems, or specific apps at your own pace.",
+      icon: <BookOpen size={40} />,
       color: "var(--secondary)"
     }
   ];
@@ -58,7 +58,7 @@ const Services = () => {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Triole IT Services Catalog",
-    "description": "Comprehensive IT services including Cybersecurity Solutions, Cloud Infrastructure, Managed IT Services, and Custom Software Development.",
+    "description": "Friendly and professional local IT support services including computer repairs, Wi-Fi and network setup, virus removal, device installations, and tech training.",
     "itemListElement": allServices.map((service, index) => ({
       "@type": "ListItem",
       "position": index + 1,
@@ -78,16 +78,16 @@ const Services = () => {
   return (
     <div className="page-padding">
       <SEO 
-        title="IT & Cybersecurity Services | Triole IT"
-        description="Explore our professional technology offerings including cybersecurity, cloud migration, managed IT services, network security, and custom software development."
-        keywords="cybersecurity solutions, cloud migration, managed IT, custom software development, IT support, network security, IT consulting"
+        title="Local IT Support & Computer Repair Services | Triole IT"
+        description="Explore our friendly tech support offerings, including computer and laptop repairs, Wi-Fi troubleshooting, virus removal, device setups, and small business IT."
+        keywords="computer repairs, laptop repairs, Wi-Fi setup, tech support, virus removal, printer setup, small business IT support, Vancouver tech support"
         schemaMarkup={servicesSchema}
       />
       <div className="container-custom">
         <div className="text-center mb-20">
           <h1 className="h1-page">Our <span className="gradient-text">Services</span></h1>
           <p className="text-lead">
-            We provide a comprehensive suite of IT services designed to protect, optimize, and grow your business.
+            We provide a complete range of friendly tech support and repair services to keep your devices running smoothly.
           </p>
         </div>
 
@@ -119,12 +119,12 @@ const Services = () => {
         </div>
 
         <div className="mt-24 card-glass text-center border-primary/20 neon-border">
-          <h2 className="h2-section">Need a Custom Solution?</h2>
+          <h2 className="h2-section">Need Tech Help Right Away?</h2>
           <p className="text-lead !text-base mb-10">
-            Every business is unique. We can create a tailored service package that meets your specific requirements and budget.
+            Whether you need a quick home repair, a network audit for your office, or ongoing device maintenance, we're here to help.
           </p>
           <a href="/contacts" className="btn-base btn-primary">
-            Book a Consultation
+            Contact Our Team
           </a>
         </div>
       </div>

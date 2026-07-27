@@ -1,24 +1,24 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Cpu, Cloud, Globe } from 'lucide-react';
+import { ArrowRight, Laptop, Wifi, HelpCircle, Zap, Smile } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const Home = () => {
   const services = [
     {
-      title: "Cyber Security",
-      desc: "Comprehensive protection for your digital assets against evolving threats.",
-      icon: <Shield className="text-primary" size={32} />
+      title: "Computer Repair",
+      desc: "Fast hardware diagnostics, component upgrades, and repair services for PCs and Macs.",
+      icon: <Laptop className="text-primary" size={32} />
     },
     {
-      title: "Cloud Solutions",
-      desc: "Scalable and secure cloud infrastructure tailored to your business needs.",
-      icon: <Cloud className="text-secondary" size={32} />
+      title: "Network & Wi-Fi",
+      desc: "Setup and troubleshooting for high-speed Wi-Fi, mesh routers, and local networks.",
+      icon: <Wifi className="text-secondary" size={32} />
     },
     {
-      title: "IT Consulting",
-      desc: "Expert guidance to optimize your technology stack and drive growth.",
-      icon: <Cpu className="text-primary" size={32} />
+      title: "Tech Support",
+      desc: "Friendly assistance for software issues, email setups, printer configuration, and backups.",
+      icon: <HelpCircle className="text-primary" size={32} />
     }
   ];
 
@@ -30,6 +30,7 @@ const Home = () => {
     "@id": "https://triole-it.com/#localbusiness",
     "url": "https://triole-it.com",
     "email": "admin@triole-it.com",
+    "description": "Triole IT provides friendly, professional, and affordable local IT support, computer repairs, network troubleshooting, and software setups for home users and small businesses.",
     "sameAs": [
       "https://www.instagram.com/triole_it/"
     ],
@@ -63,9 +64,9 @@ const Home = () => {
   return (
     <div className="home-page">
       <SEO 
-        title="Triole IT | Premium Managed IT Services & Cybersecurity Solutions"
-        description="Triole IT provides next-generation managed IT services, advanced cybersecurity solutions, and scalable cloud infrastructure for modern enterprises."
-        keywords="IT infrastructure, cybersecurity, cloud solutions, IT consulting, managed IT services, tech solutions"
+        title="Triole IT | Local IT Support & Computer Repair Services"
+        description="Triole IT provides friendly, professional, and affordable local IT support, computer and laptop repairs, network troubleshooting, and device setup for home users and small businesses."
+        keywords="local IT support, computer repairs, laptop repair, Wi-Fi troubleshooting, network setup, printer setup, virus removal, smart home setup, Vancouver tech support"
         schemaMarkup={homeSchema}
       />
       {/* Hero Section */}
@@ -81,11 +82,11 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="h1-hero">
-              Elevate Your <br />
-              <span className="gradient-text">IT Infrastructure</span>
+              Friendly & Reliable <br />
+              <span className="gradient-text">Local IT Support</span>
             </h1>
             <p className="text-lead mb-10 !mx-0">
-              Next-generation technology solutions for modern enterprises. We provide the security, scalability, and performance you need to stay ahead.
+              We help home users and small businesses solve computer repairs, Wi-Fi networks, software issues, and everyday technology challenges with ease.
             </p>
             <div className="flex gap-4">
               <Link to="/services" className="btn-base btn-primary gap-2">
@@ -106,14 +107,14 @@ const Home = () => {
             <div className="relative z-10 card-glass border-white/10 neon-border">
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 bg-white/5 rounded-2xl flex flex-col gap-4">
-                  <Globe className="text-primary" size={40} />
-                  <h3 className="font-bold">Global Reach</h3>
-                  <p className="text-xs text-muted">Supporting businesses across 15+ countries worldwide.</p>
+                  <Zap className="text-primary" size={40} />
+                  <h3 className="font-bold">Fast Turnaround</h3>
+                  <p className="text-xs text-muted">Getting your devices diagnosed and repaired as quickly as possible.</p>
                 </div>
                 <div className="p-6 bg-white/5 rounded-2xl flex flex-col gap-4">
-                  <Shield className="text-secondary" size={40} />
-                  <h3 className="font-bold">24/7 Security</h3>
-                  <p className="text-xs text-muted">Real-time monitoring and threat mitigation.</p>
+                  <Smile className="text-secondary" size={40} />
+                  <h3 className="font-bold">Jargon-Free Help</h3>
+                  <p className="text-xs text-muted">Friendly, straightforward support without the confusing technical speak.</p>
                 </div>
               </div>
             </div>
@@ -127,9 +128,9 @@ const Home = () => {
       <section className="section-padding bg-[#09090B]">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="h2-section">Core Expertise</h2>
+            <h2 className="h2-section">How We Can Help</h2>
             <p className="text-muted max-w-2xl mx-auto">
-              We specialize in delivering high-impact technology services that drive efficiency and security.
+              We specialize in resolving everyday technology challenges for you, your home, or your local business.
             </p>
           </div>
 
