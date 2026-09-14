@@ -83,7 +83,6 @@ export default function Footer() {
               <li>
                 <a
                   href="https://store.triole-it.com"
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="transition hover:text-purple-400 inline-flex items-center gap-1 text-purple-300"
                 >

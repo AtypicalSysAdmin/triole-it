@@ -35,18 +35,16 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-sm font-medium transition hover:text-white hover:drop-shadow-[0_0_6px_rgba(168,85,247,0.5)] ${
-                location.pathname === link.path
+              className={`text-sm font-medium transition hover:text-white hover:drop-shadow-[0_0_6px_rgba(168,85,247,0.5)] ${location.pathname === link.path
                   ? 'text-white drop-shadow-[0_0_6px_rgba(168,85,247,0.5)]'
                   : 'text-zinc-300'
-              }`}
+                }`}
             >
               {link.name}
             </Link>
           ))}
           <a
             href="https://store.triole-it.com"
-            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 rounded-lg border border-purple-500/30 bg-purple-500/10 px-3 py-1.5 text-xs font-semibold text-purple-300 transition-all duration-200 hover:border-purple-500/60 hover:bg-purple-500/20 hover:text-purple-100 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] hover:scale-[1.02]"
           >
@@ -73,9 +71,8 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.path}
-              className={`block py-2 text-sm font-medium transition hover:text-white ${
-                location.pathname === link.path ? 'text-purple-400' : 'text-zinc-300'
-              }`}
+              className={`block py-2 text-sm font-medium transition hover:text-white ${location.pathname === link.path ? 'text-purple-400' : 'text-zinc-300'
+                }`}
               onClick={() => setMobileOpen(false)}
             >
               {link.name}
@@ -83,7 +80,6 @@ export default function Navbar() {
           ))}
           <a
             href="https://store.triole-it.com"
-            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-between py-2 text-sm font-medium text-purple-400 hover:text-purple-300"
             onClick={() => setMobileOpen(false)}

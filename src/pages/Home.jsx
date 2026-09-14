@@ -46,7 +46,7 @@ const Home = () => {
 
   return (
     <div className="relative overflow-hidden">
-      <SEO 
+      <SEO
         title="Triole IT | Local IT Support & Computer Repair Services"
         description="Triole IT provides friendly, professional, and affordable local IT support, computer and laptop repairs, network troubleshooting, and device setup for home users and small businesses."
         keywords="local IT support, computer repairs, laptop repair, Wi-Fi troubleshooting, network setup, printer setup, virus removal, smart home setup, Vancouver tech support"
@@ -61,9 +61,9 @@ const Home = () => {
       <section className="relative pt-16 pb-24 lg:pt-24 lg:pb-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
-            
+
             {/* Hero Left Column */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -109,7 +109,7 @@ const Home = () => {
             </motion.div>
 
             {/* Hero Right Column: Showcase Card */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -154,7 +154,6 @@ const Home = () => {
                   </div>
                   <a
                     href="https://store.triole-it.com"
-                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-300 hover:text-white transition"
                   >
@@ -171,7 +170,7 @@ const Home = () => {
       {/* Value Props Section */}
       <section className="relative border-y border-zinc-800/80 bg-zinc-900/30 backdrop-blur-md">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-16 sm:grid-cols-3 sm:px-6 lg:px-8">
-          
+
           <div className="glass-card rounded-2xl p-6 border border-zinc-800/80 hover:border-purple-500/40 transition">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
               <Laptop size={24} />
@@ -257,7 +256,6 @@ const Home = () => {
             </div>
             <a
               href="https://store.triole-it.com"
-              target="_blank"
               rel="noopener noreferrer"
               className="btn-primary shrink-0"
             >

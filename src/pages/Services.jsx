@@ -78,7 +78,7 @@ const Services = () => {
 
   return (
     <div className="relative overflow-hidden py-16 lg:py-24">
-      <SEO 
+      <SEO
         title="Local IT Support & Computer Repair Services | Triole IT"
         description="Explore our friendly tech support offerings, including computer and laptop repairs, Wi-Fi troubleshooting, virus removal, device setups, and small business IT."
         keywords="computer repairs, laptop repairs, Wi-Fi setup, tech support, virus removal, printer setup, small business IT support, Vancouver tech support"
@@ -124,7 +124,7 @@ const Services = () => {
               className="group glass-card rounded-2xl p-6 border border-zinc-800/80 transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 flex flex-col justify-between"
             >
               <div>
-                <div 
+                <div
                   className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-zinc-800/80 border border-zinc-700/60 group-hover:scale-110 transition duration-300 mb-5"
                   style={{ color: service.color, borderColor: `${service.color}40` }}
                 >
@@ -160,7 +160,6 @@ const Services = () => {
             </Link>
             <a
               href="https://store.triole-it.com"
-              target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
             >
