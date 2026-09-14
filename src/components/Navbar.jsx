@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBag } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
@@ -41,7 +41,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -53,6 +53,15 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <a
+            href="https://store.triole-it.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-base btn-primary btn-sm flex items-center gap-2"
+          >
+            <ShoppingBag size={16} />
+            <span>Store</span>
+          </a>
           <Link to="/contacts" className="btn-base btn-glass btn-sm border-primary/50 neon-border">
             Get Started
           </Link>
@@ -77,6 +86,25 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+          <div className="flex flex-col gap-3 mt-2">
+            <a
+              href="https://store.triole-it.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-base btn-primary btn-sm flex items-center justify-center gap-2 w-full"
+              onClick={() => setIsOpen(false)}
+            >
+              <ShoppingBag size={16} />
+              <span>Store</span>
+            </a>
+            <Link
+              to="/contacts"
+              className="btn-base btn-glass btn-sm border-primary/50 neon-border flex items-center justify-center w-full"
+              onClick={() => setIsOpen(false)}
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
       )}
     </nav>
