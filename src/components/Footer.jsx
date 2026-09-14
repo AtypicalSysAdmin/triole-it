@@ -1,81 +1,127 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, ExternalLink } from 'lucide-react';
 import logo from '../assets/logo.png';
 
-const InstagramIcon = ({ size = 24 }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+const InstagramIcon = ({ size = 20 }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
 );
 
-const Footer = () => {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0D0D10] border-t border-border pt-16 pb-8">
-      <div className="container-custom">
-        <div className="flex flex-col md:flex-row justify-between gap-12 mb-12">
-          <div className="max-w-sm">
-            <Link to="/" className="flex items-center gap-2 mb-6" aria-label="Triole IT Home">
-              <img src={logo} alt="Triole IT Logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold gradient-text">TRIOLE IT</span>
+    <footer className="border-t border-zinc-800 bg-[#0D0D10] text-zinc-400">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          {/* Brand */}
+          <div>
+            <Link to="/" className="flex items-center gap-2 mb-3">
+              <img src={logo} alt="Triole IT Logo" className="h-7 w-auto" />
+              <span className="text-lg font-bold gradient-text">TRIOLE IT</span>
             </Link>
-            <p className="text-muted text-sm mb-6">
-              Friendly, reliable local IT support, computer repairs, and network troubleshooting for home users and small businesses.
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Friendly, reliable local IT support, computer repairs, and network troubleshooting for home users and small businesses across Vancouver &amp; surrounding areas.
             </p>
-            <div className="flex gap-4">
-              <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="text-muted hover:text-primary transition-colors" aria-label="Instagram"><InstagramIcon size={20} /></a>
-              <a href="#" className="text-muted hover:text-primary transition-colors" aria-label="Send Message"><MessageSquare size={20} /></a>
+            <div className="flex gap-4 mt-4">
+              <a
+                href="https://instagram.com/triole_it"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-purple-400 transition-colors"
+                aria-label="Instagram"
+              >
+                <InstagramIcon size={20} />
+              </a>
+              <a
+                href="mailto:admin@triole-it.com"
+                className="text-zinc-400 hover:text-purple-400 transition-colors"
+                aria-label="Email Us"
+              >
+                <Mail size={20} />
+              </a>
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="footer-title">Quick Links</h4>
-            <ul className="link-list">
-              <li><Link to="/" className="link-item">Home</Link></li>
-              <li><Link to="/about" className="link-item">About Us</Link></li>
-              <li><Link to="/services" className="link-item">Services</Link></li>
-              <li><Link to="/contacts" className="link-item">Contacts</Link></li>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200">Quick Links</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                <Link to="/" className="transition hover:text-purple-400">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="transition hover:text-purple-400">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="transition hover:text-purple-400">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/contacts" className="transition hover:text-purple-400">
+                  Contacts
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://store.triole-it.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition hover:text-purple-400 inline-flex items-center gap-1 text-purple-300"
+                >
+                  <span>Triole Store</span>
+                  <ExternalLink size={12} className="text-purple-400" />
+                </a>
+              </li>
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="footer-title">Contact Us</h4>
-            <ul className="link-list">
-              <li className="contact-item">
-                <Mail size={18} className="contact-icon" />
-                <span>admin@triole-it.com</span>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200">Contact Us</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li className="flex items-center gap-2">
+                <Mail size={15} className="text-purple-400 shrink-0" />
+                <a href="mailto:admin@triole-it.com" className="hover:text-purple-400 transition-colors">
+                  admin@triole-it.com
+                </a>
               </li>
-              <li className="contact-item">
-                <InstagramIcon size={18} className="contact-icon" />
-                <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">@triole_it</a>
+              <li className="flex items-center gap-2">
+                <InstagramIcon size={15} />
+                <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+                  @triole_it
+                </a>
               </li>
-              <li className="contact-item">
-                <MapPin size={18} className="contact-icon" />
-                <span>Vancouver, BC & Surrounding Areas</span>
+              <li className="flex items-center gap-2">
+                <MapPin size={15} className="text-purple-400 shrink-0" />
+                <span>Vancouver, BC &amp; Surrounding Areas</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center text-xs text-muted">
-          <p>&copy; {currentYear} Triole IT. All rights reserved.</p>
+        <div className="mt-10 border-t border-zinc-800/80 pt-6 text-center text-xs text-zinc-400">
+          &copy; {currentYear} Triole IT. All rights reserved.
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

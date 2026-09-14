@@ -1,55 +1,30 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { AlertCircle, Home } from 'lucide-react';
+import { Compass } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const NotFound = () => {
   return (
-    <div className="page-padding px-6 min-h-[80vh] flex items-center justify-center">
+    <div className="relative overflow-hidden py-32">
       <SEO 
         title="Page Not Found | Triole IT"
         description="The page you are looking for does not exist on Triole IT website."
         robots="noindex, nofollow"
       />
-      <div className="container-custom max-w-2xl">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="card-glass p-10 md:p-16 text-center relative overflow-hidden neon-border"
-        >
-          {/* Background decoration */}
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary/20 rounded-full blur-3xl"></div>
-
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-8 flex justify-center"
-          >
-            <div className="p-5 rounded-full bg-primary/10 text-primary drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">
-              <AlertCircle size={64} strokeWidth={1.5} />
-            </div>
-          </motion.div>
-
-          <h1 className="text-6xl md:text-8xl font-extrabold mb-4 gradient-text neon-glow tracking-tighter">
-            404
-          </h1>
-          
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">
-            Page Not Found
-          </h2>
-          
-          <p className="text-lead mb-10">
-            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+      <div className="glow-primary top-10 -left-20" />
+      <div className="mx-auto max-w-md px-4 text-center relative z-10">
+        <div className="glass-card rounded-2xl p-10 border border-zinc-800/80 neon-border">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 mb-4">
+            <Compass size={36} />
+          </div>
+          <h1 className="text-5xl font-extrabold gradient-text tracking-tight">404</h1>
+          <p className="mt-3 text-lg font-bold text-white">Page Not Found</p>
+          <p className="mt-1 text-xs text-zinc-400">
+            The page you are looking for doesn't exist or has moved.
           </p>
-
-          <Link to="/" className="btn-base btn-primary gap-2">
-            <Home size={20} />
-            Back to Home
+          <Link to="/" className="btn-primary mt-6 inline-flex">
+            Return to Homepage
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

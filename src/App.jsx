@@ -12,9 +12,9 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="app-container">
+      <div className="flex min-h-screen flex-col bg-[#09090B] text-white">
         <Navbar />
-        <main>
+        <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

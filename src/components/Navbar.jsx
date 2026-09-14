@@ -1,24 +1,11 @@
-import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Menu, X, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 import logo from '../assets/logo.png';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [isLogoFocused, setIsLogoFocused] = useState(false);
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-      if (isLogoFocused) {
-        setIsLogoFocused(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isLogoFocused]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -28,26 +15,30 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'} ${isLogoFocused ? 'logo-active' : ''}`}>
-      {isLogoFocused && <div className="logo-backdrop" onClick={() => setIsLogoFocused(false)}></div>}
-      <div className="container-custom flex justify-between items-center">
-        <div className="flex items-center gap-2 group">
-          <div className={`logo-wrapper ${isLogoFocused ? 'focused' : ''}`} onClick={() => setIsLogoFocused(!isLogoFocused)}>
-            <div className="flex items-center gap-2">
-              <img src={logo} alt="Triole IT Logo" className="h-10 w-auto transition-transform duration-300" />
-              <span className="text-xl font-bold gradient-text tracking-tighter">TRIOLE IT</span>
-            </div>
-          </div>
-        </div>
+    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-[#09090B]/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <img
+            src={logo}
+            alt="Triole IT Logo"
+            className="h-9 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]"
+          />
+          <span className="text-xl font-extrabold tracking-tight gradient-text">
+            TRIOLE IT
+          </span>
+        </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname === link.path ? 'text-primary' : 'text-foreground/80'
+              className={`text-sm font-medium transition hover:text-white hover:drop-shadow-[0_0_6px_rgba(168,85,247,0.5)] ${
+                location.pathname === link.path
+                  ? 'text-white drop-shadow-[0_0_6px_rgba(168,85,247,0.5)]'
+                  : 'text-zinc-300'
               }`}
             >
               {link.name}
@@ -57,58 +48,54 @@ const Navbar = () => {
             href="https://store.triole-it.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-base btn-primary btn-sm flex items-center gap-2"
+            className="flex items-center gap-1.5 rounded-lg border border-purple-500/30 bg-purple-500/10 px-3 py-1.5 text-xs font-semibold text-purple-300 transition-all duration-200 hover:border-purple-500/60 hover:bg-purple-500/20 hover:text-purple-100 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] hover:scale-[1.02]"
           >
-            <ShoppingBag size={16} />
-            <span>Store</span>
+            <ShoppingBag size={14} className="text-purple-400" />
+            <span>Triole Store</span>
+            <ExternalLink size={13} className="text-purple-400" />
           </a>
-          <Link to="/contacts" className="btn-base btn-glass btn-sm border-primary/50 neon-border">
-            Get Started
-          </Link>
-        </div>
+        </nav>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden nav-mobile-toggle text-foreground" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        <button
+          className="rounded-lg p-2 text-zinc-300 hover:bg-zinc-800/80 hover:text-white md:hidden"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden glass absolute top-full left-0 w-full p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
+      {/* Mobile Nav */}
+      {mobileOpen && (
+        <nav className="border-t border-zinc-800 bg-[#09090B]/95 px-4 pb-4 pt-2 md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className="text-lg font-medium"
-              onClick={() => setIsOpen(false)}
+              className={`block py-2 text-sm font-medium transition hover:text-white ${
+                location.pathname === link.path ? 'text-purple-400' : 'text-zinc-300'
+              }`}
+              onClick={() => setMobileOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          <div className="flex flex-col gap-3 mt-2">
-            <a
-              href="https://store.triole-it.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-base btn-primary btn-sm flex items-center justify-center gap-2 w-full"
-              onClick={() => setIsOpen(false)}
-            >
-              <ShoppingBag size={16} />
-              <span>Store</span>
-            </a>
-            <Link
-              to="/contacts"
-              className="btn-base btn-glass btn-sm border-primary/50 neon-border flex items-center justify-center w-full"
-              onClick={() => setIsOpen(false)}
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
+          <a
+            href="https://store.triole-it.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between py-2 text-sm font-medium text-purple-400 hover:text-purple-300"
+            onClick={() => setMobileOpen(false)}
+          >
+            <span className="flex items-center gap-1.5">
+              <ShoppingBag size={14} />
+              <span>Triole Store</span>
+            </span>
+            <ExternalLink size={14} />
+          </a>
+        </nav>
       )}
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}
