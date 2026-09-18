@@ -96,14 +96,14 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] mb-4">
-            <Sparkles size={14} className="text-purple-400" />
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] mb-5">
+            <Sparkles size={16} className="text-purple-400" />
             <span>Comprehensive Support Catalog</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Our <span className="gradient-text">Services</span>
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-zinc-400">
+          <p className="mt-5 text-xl leading-relaxed text-zinc-300">
             We provide a complete range of friendly tech support and repair services to keep your devices running smoothly and securely.
           </p>
         </motion.div>
@@ -121,47 +121,47 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               whileHover={{ y: -6 }}
-              className="group glass-card rounded-2xl p-6 border border-zinc-800/80 transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 flex flex-col justify-between"
+              className="group glass-card rounded-2xl p-7 border border-zinc-800/80 transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 flex flex-col justify-between"
             >
               <div>
                 <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-zinc-800/80 border border-zinc-700/60 group-hover:scale-110 transition duration-300 mb-5"
+                  className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-zinc-800/80 border border-zinc-700/60 group-hover:scale-110 transition duration-300 mb-6"
                   style={{ color: service.color, borderColor: `${service.color}40` }}
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-base font-bold text-white group-hover:text-purple-300 transition mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition mb-3">
                   {service.title}
                 </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                   {service.desc}
                 </p>
               </div>
 
               <Link
                 to="/contacts"
-                className="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 group-hover:text-purple-300 transition"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-purple-400 group-hover:text-purple-300 transition"
               >
-                Inquire now <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
+                Inquire now <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
           ))}
         </div>
 
         {/* CTA Card matching Store banner */}
-        <div className="mt-20 glass-card rounded-2xl p-8 sm:p-12 text-center border border-purple-500/30 neon-border max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Need Tech Help Right Away?</h2>
-          <p className="mt-3 text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
+        <div className="mt-20 glass-card rounded-2xl p-8 sm:p-14 text-center border border-purple-500/30 neon-border max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Need Tech Help Right Away?</h2>
+          <p className="mt-4 text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto leading-relaxed">
             Whether you need a quick home repair, a network audit for your office, or ongoing device maintenance, our friendly experts are ready to assist.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link to="/contacts" className="btn-primary">
-              Contact Our Team <ArrowRight size={16} />
+            <Link to="/contacts" className="btn-primary text-base">
+              Contact Our Team <ArrowRight size={18} />
             </Link>
             <a
               href="https://store.triole-it.com"
               rel="noopener noreferrer"
-              className="btn-secondary"
+              className="btn-secondary text-base"
             >
               Browse Hardware Store
             </a>

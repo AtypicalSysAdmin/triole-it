@@ -12,16 +12,16 @@ const NotFound = () => {
       />
       <div className="glow-primary top-10 -left-20" />
       <div className="mx-auto max-w-md px-4 text-center relative z-10">
-        <div className="glass-card rounded-2xl p-10 border border-zinc-800/80 neon-border">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 mb-4">
-            <Compass size={36} />
+        <div className="glass-card rounded-2xl p-10 sm:p-12 border border-zinc-800/80 neon-border">
+          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 mb-6">
+            <Compass size={40} />
           </div>
-          <h1 className="text-5xl font-extrabold gradient-text tracking-tight">404</h1>
-          <p className="mt-3 text-lg font-bold text-white">Page Not Found</p>
-          <p className="mt-1 text-xs text-zinc-400">
+          <h1 className="text-6xl font-extrabold gradient-text tracking-tight">404</h1>
+          <p className="mt-4 text-2xl font-bold text-white">Page Not Found</p>
+          <p className="mt-2 text-base text-zinc-300">
             The page you are looking for doesn't exist or has moved.
           </p>
-          <Link to="/" className="btn-primary mt-6 inline-flex">
+          <Link to="/" className="btn-primary mt-8 inline-flex text-base">
             Return to Homepage
           </Link>
         </div>
