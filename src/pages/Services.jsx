@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { Laptop, Wifi, ShieldAlert, Database, Printer, Settings, Briefcase, BookOpen, Sparkles, ArrowRight } from 'lucide-react';
+import { Laptop, Wifi, ShieldAlert, Database, Printer, Settings, Briefcase, BookOpen, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
 const Services = () => {
+
   const allServices = [
     {
       title: "Computer Repair & Upgrades",
@@ -52,6 +53,34 @@ const Services = () => {
       desc: "Patient, jargon-free tutoring to help you or your team learn how to use new devices, operating systems, or specific apps at your own pace.",
       icon: <BookOpen size={32} />,
       color: "#F472B6"
+    }
+  ];
+
+  const maintenancePlans = [
+    {
+      name: "Residential Tech Guardian",
+      cadence: "Monthly Retainer",
+      price: "$49 / month",
+      billingDetails: "Billed monthly on the 1st. Continuous service auto-renews until cancelled.",
+      features: [
+        "Quarterly remote speed tune-up & virus audit",
+        "Priority queue for emergency computer repairs",
+        "15% discount on all on-site labor & diagnostic visits",
+        "Unlimited remote quick-question guidance"
+      ]
+    },
+    {
+      name: "Small Business Pro Retainer",
+      cadence: "Monthly Retainer",
+      price: "$199 / month",
+      billingDetails: "Billed monthly. Continuous service auto-renews until cancelled.",
+      popular: true,
+      features: [
+        "Up to 5 business workstations & network router monitored",
+        "Automated encrypted cloud backup verification",
+        "Guaranteed 2-hour priority emergency response",
+        "Monthly security patch management & Wi-Fi audit"
+      ]
     }
   ];
 
@@ -108,10 +137,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: '0' }}>
-          Our IT Service Catalog
-        </h2>
-
+        {/* 1. On-Demand Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {allServices.map((service, i) => (
             <motion.div
@@ -148,7 +174,77 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA Card matching Store banner */}
+        {/* 2. California ARL / FTC Compliant Continuous Retainer Plans */}
+        <div className="mt-24 border-t border-zinc-800/80 pt-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="badge badge-purple mb-3">Ongoing Peace-of-Mind</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              Continuous Maintenance &amp; Retainer Plans
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-zinc-300 leading-relaxed">
+              Transparent monthly plans for continuous protection, priority repairs, and proactive maintenance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {maintenancePlans.map((plan, i) => (
+              <div
+                key={i}
+                className={`glass-card rounded-2xl p-8 border ${
+                  plan.popular ? 'border-purple-500/60 neon-border' : 'border-zinc-800'
+                } flex flex-col justify-between relative`}
+              >
+                {plan.popular && (
+                  <span className="absolute -top-3.5 right-6 rounded-full bg-purple-600 px-3.5 py-0.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
+                    Most Popular
+                  </span>
+                )}
+                <div>
+                  <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+                  <div className="mt-4 flex items-baseline gap-2">
+                    <span className="text-3xl sm:text-4xl font-extrabold text-white">{plan.price}</span>
+                  </div>
+                  <p className="text-xs text-purple-300 mt-1 font-medium">{plan.billingDetails}</p>
+
+                  <ul className="mt-6 space-y-3 text-sm text-zinc-300">
+                    {plan.features.map((feat, fi) => (
+                      <li key={fi} className="flex items-start gap-2.5">
+                        <CheckCircle2 size={16} className="text-purple-400 shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Statutory Continuous Service & Cancellation Disclosures (Adjacent to button) */}
+                <div className="mt-8 pt-6 border-t border-zinc-800">
+                  <div className="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800 text-xs text-zinc-400 leading-relaxed mb-4">
+                    <p className="font-semibold text-zinc-300 mb-1">
+                      Continuous Service Disclosure (California ARL / FTC):
+                    </p>
+                    <p>
+                      Your subscription will automatically renew each month at the current rate until cancelled. You may cancel at any time with 1 click by emailing <a href="mailto:admin@triole-it.com" className="text-purple-400 underline">admin@triole-it.com</a> or via your customer billing link. No cancellation fees.
+                    </p>
+                  </div>
+
+                  <Link
+                    to="/contacts"
+                    className="btn-primary w-full text-sm font-bold py-3 text-center justify-center gap-2"
+                  >
+                    <span>Inquire About Plan</span>
+                    <ArrowRight size={15} />
+                  </Link>
+
+                  <p className="text-[11px] text-zinc-400 text-center mt-2.5">
+                    Backed by Triole IT 30-day satisfaction guarantee &bull; <Link to="/terms" className="underline hover:text-white">View Full Terms</Link>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 3. CTA Card */}
         <div className="mt-20 glass-card rounded-2xl p-8 sm:p-14 text-center border border-purple-500/30 neon-border max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Need Tech Help Right Away?</h2>
           <p className="mt-4 text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto leading-relaxed">

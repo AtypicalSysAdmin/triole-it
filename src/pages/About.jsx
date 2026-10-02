@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Users, Zap, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Target, Users, Zap, Award, Sparkles } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const About = () => {
