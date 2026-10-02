@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldAlert, Mail, MapPin, FileCheck, AlertCircle, Copy, Check } from 'lucide-react';
+import { ShieldAlert, MapPin, FileCheck, AlertCircle, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import SEO from '../components/SEO';
 
@@ -54,123 +54,119 @@ Email: copyright@triole-it.com
   };
 
   return (
-    <div className="relative overflow-hidden py-16 lg:py-24">
+    <div className="relative overflow-hidden py-12 lg:py-20">
       <SEO
         title="DMCA Copyright Policy & Safe Harbor Notice | Triole IT"
         description="Triole IT DMCA Copyright Agent information, takedown request template, counter-notification procedure, and safe harbor compliance under 17 U.S.C. § 512."
-        keywords="DMCA notice, copyright agent, safe harbor, takedown notice, copyright infringement, Triole IT DMCA"
+        keywords="DMCA policy, copyright agent, takedown notice, 512 safe harbor, Triole IT copyright"
         schemaMarkup={dmcaSchema}
       />
 
-      <div className="glow-primary top-10 -left-20" />
-      <div className="glow-secondary top-96 -right-20" />
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] mb-5">
-            <ShieldAlert size={16} className="text-purple-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-300 mb-5">
+            <ShieldAlert size={14} className="text-purple-400" />
             <span>Intellectual Property Protection</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            DMCA &amp; <span className="gradient-text">Copyright</span> Policy
+            DMCA &amp; <span className="gradient-text">Copyright</span>
           </h1>
-          <p className="mt-4 text-base text-zinc-400">
-            Designated Agent Notice pursuant to the Digital Millennium Copyright Act (17 U.S.C. &sect; 512)
+          <p className="mt-4 text-sm sm:text-base text-zinc-400">
+            Designated Agent Directory &bull; Safe Harbor Notice under 17 U.S.C. &sect; 512(c)
           </p>
         </motion.div>
 
-        <div className="space-y-10 text-zinc-300 leading-relaxed text-base">
+        <div className="space-y-8 text-zinc-300 leading-relaxed text-base">
           {/* Section 1: Designated Agent Box */}
-          <section className="glass-card p-8 sm:p-10 border border-purple-500/30 neon-border">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <Mail className="text-purple-400" size={24} />
-              Designated Copyright Agent Contact Info
+          <section className="card-surface p-6 sm:p-8 border-purple-500/30">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <FileCheck className="text-purple-400" size={24} />
+              <span>Designated Copyright Agent Contact Information</span>
             </h2>
-            <p className="mb-6">
-              Triole IT respects the intellectual property rights of creators and complies with the requirements of the Digital Millennium Copyright Act (&quot;DMCA&quot;), 17 U.S.C. &sect; 512(c). Notifications of claimed copyright infringement should be directed to our Designated Copyright Agent:
+            <p className="mb-6 text-sm sm:text-base">
+              Pursuant to the Digital Millennium Copyright Act (17 U.S.C. &sect; 512(c)(2)) and Canadian Copyright Act Notice-and-Notice provisions, all formal notices of claimed infringement must be directed to Triole IT's Designated Agent:
             </p>
-            <div className="p-6 rounded-2xl bg-zinc-900/80 border border-zinc-800 space-y-3">
-              <p className="text-lg font-bold text-white">Triole IT - DMCA Copyright Agent</p>
-              <div className="flex items-center gap-3 text-zinc-300">
-                <Mail size={18} className="text-purple-400 shrink-0" />
-                <span>
-                  Email: <a href="mailto:copyright@triole-it.com" className="text-purple-300 hover:underline font-semibold">copyright@triole-it.com</a> (cc: <a href="mailto:admin@triole-it.com" className="text-purple-300 hover:underline">admin@triole-it.com</a>)
-                </span>
+
+            <div className="p-6 rounded-lg bg-[#18181c] border border-zinc-800 space-y-3 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <span className="text-xs uppercase tracking-wider text-zinc-400 font-semibold block mb-1">
+                    Designated Agent
+                  </span>
+                  <span className="text-base font-bold text-white">Triole IT Legal &amp; Compliance Dept</span>
+                </div>
+                <div>
+                  <span className="text-xs uppercase tracking-wider text-zinc-400 font-semibold block mb-1">
+                    Email Address (Preferred)
+                  </span>
+                  <a href="mailto:copyright@triole-it.com" className="text-base font-bold text-purple-300 hover:underline">
+                    copyright@triole-it.com
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-zinc-300">
-                <MapPin size={18} className="text-purple-400 shrink-0" />
-                <span>Physical Address: Triole IT Support, Vancouver, BC, Canada</span>
+
+              <div className="pt-3 border-t border-zinc-800 flex items-start gap-3 text-zinc-300">
+                <MapPin size={18} className="text-purple-400 shrink-0 mt-0.5" />
+                <span>Mailing Jurisdiction: Vancouver, British Columbia, Canada</span>
               </div>
-            </div>
-            <div className="mt-4 p-4 rounded-xl border border-zinc-800 bg-zinc-900/40 text-xs text-zinc-400">
-              <strong>U.S. Copyright Office Directory Advisory:</strong> In accordance with 37 C.F.R. &sect; 201.38, service providers subject to U.S. jurisdiction maintain electronic designation within the U.S. Copyright Office Online Directory of Designated Agents.
             </div>
           </section>
 
-          {/* Section 2: Statutory Notice Requirements */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <FileCheck className="text-purple-400" size={24} />
-              Filing a DMCA Takedown Notice
+          {/* Section 2: Statutory Elements */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              Required Statutory Elements of an Infringement Notice
             </h2>
             <p className="mb-4">
-              To be effective under 17 U.S.C. &sect; 512(c)(3), notifications of claimed infringement must be written and include all six statutory elements:
+              To be legally effective under 17 U.S.C. &sect; 512(c)(3)(A), a notification of claimed copyright infringement must be in writing and contain the following essential elements:
             </p>
-            <ol className="list-decimal pl-6 space-y-2 text-zinc-300 mb-6">
-              <li>A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
-              <li>Identification of the copyrighted work claimed to have been infringed, or a representative list of such works.</li>
-              <li>Identification of the material that is claimed to be infringing and information reasonably sufficient to permit us to locate the material (such as exact URLs).</li>
-              <li>Information reasonably sufficient to permit us to contact the complaining party (address, telephone number, and email address).</li>
-              <li>A statement that the complaining party has a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law.</li>
-              <li>A statement that the information in the notification is accurate, and under penalty of perjury, that the complaining party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
+            <ol className="list-decimal pl-6 space-y-2 text-zinc-300">
+              <li>A physical or electronic signature of a person authorized to act on behalf of the owner of the copyright.</li>
+              <li>Identification of the copyrighted work claimed to have been infringed.</li>
+              <li>Identification of the material on our site claimed to be infringing, with specific URLs.</li>
+              <li>Information reasonably sufficient to permit Triole IT to contact you (name, address, telephone, email).</li>
+              <li>A statement that you have a good faith belief that the disputed use is not authorized.</li>
+              <li>A statement made under penalty of perjury that the information in your notice is accurate.</li>
             </ol>
-
-            {/* Template Card */}
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/90 p-5">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-bold uppercase tracking-wider text-purple-300">
-                  Standard DMCA Notice Form Template
-                </span>
-                <button
-                  type="button"
-                  onClick={handleCopyTemplate}
-                  className="btn-glass text-xs px-3 py-1.5 gap-1.5"
-                >
-                  {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
-                  <span>{copied ? 'Copied!' : 'Copy Template'}</span>
-                </button>
-              </div>
-              <pre className="text-xs text-zinc-300 font-mono overflow-x-auto p-4 rounded-lg bg-black/60 border border-zinc-800 whitespace-pre-wrap">
-                {dmcaNoticeTemplate}
-              </pre>
-            </div>
           </section>
 
-          {/* Section 3: Counter-Notification & Repeat Infringer Policy */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <AlertCircle className="text-purple-400" size={24} />
-              Counter-Notification &amp; Repeat Infringer Policy
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-lg font-bold text-white mb-2">Counter-Notification Procedure</h3>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  If you believe material you posted was removed or disabled by mistake or misidentification, you may submit a written Counter-Notification to our Designated Copyright Agent pursuant to 17 U.S.C. &sect; 512(g)(3). The notice must contain your physical or electronic signature, identification of the removed material, a statement under penalty of perjury of good faith belief, and consent to federal court jurisdiction.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white mb-2">Repeat Infringer Policy</h3>
-                <p className="text-sm text-zinc-300 leading-relaxed">
-                  In compliance with Section 512(i)(1)(A) of the DMCA, Triole IT enforces a policy that provides for the immediate termination of user accounts, service contracts, or access rights of repeat copyright infringers under appropriate circumstances.
-                </p>
-              </div>
+          {/* Section 3: Copyable Template */}
+          <section className="card-surface p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-white">
+                DMCA Notice Takedown Template
+              </h2>
+              <button
+                type="button"
+                onClick={handleCopyTemplate}
+                className="btn-secondary text-sm gap-2 shrink-0"
+              >
+                {copied ? <Check size={16} className="text-emerald-400" /> : <Copy size={16} />}
+                <span>{copied ? 'Copied to Clipboard' : 'Copy Notice Template'}</span>
+              </button>
             </div>
+            <pre className="p-4 rounded-lg bg-[#0a0a0c] border border-zinc-800 font-mono text-xs sm:text-sm text-zinc-300 overflow-x-auto whitespace-pre leading-relaxed">
+              {dmcaNoticeTemplate}
+            </pre>
+          </section>
+
+          {/* Section 4: Repeat Infringer Policy */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <AlertCircle size={22} className="text-purple-400" />
+              <span>Repeat Infringer Policy &amp; Subpoena Cooperation</span>
+            </h2>
+            <p className="mb-3">
+              In accordance with 17 U.S.C. &sect; 512(i)(1)(A), Triole IT maintains an established policy providing for the prompt termination, in appropriate circumstances, of subscribers, account holders, or forum contributors who are repeat copyright infringers.
+            </p>
+            <p>
+              Under 17 U.S.C. &sect; 512(h), upon receipt of a statutory administrative subpoena, Triole IT complies fully with judicial orders to identify alleged infringers.
+            </p>
           </section>
         </div>
       </div>

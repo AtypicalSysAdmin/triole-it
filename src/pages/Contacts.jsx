@@ -15,6 +15,7 @@ const InstagramIcon = ({ size = 20 }) => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -77,12 +78,11 @@ const Contacts = () => {
       return;
     }
 
-    // Process submission successfully
     setFormSubmitted(true);
   };
 
   return (
-    <div className="relative overflow-hidden py-16 lg:py-24">
+    <div className="relative overflow-hidden py-12 lg:py-20">
       <SEO
         title="Contact Us | Local IT Support & Computer Repairs"
         description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com, book a service inquiry, or follow @triole_it on Instagram."
@@ -90,87 +90,78 @@ const Contacts = () => {
         schemaMarkup={contactSchema}
       />
 
-      {/* Ambient background glows */}
-      <div className="glow-primary top-10 -left-20" />
-      <div className="glow-secondary top-96 -right-20" />
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] mb-5">
-            <Sparkles size={16} className="text-purple-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-300 mb-5">
+            <Sparkles size={14} className="text-purple-400" />
             <span>We're Here to Help</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Get in <span className="gradient-text">Touch</span>
           </h1>
-          <p className="mt-5 text-xl leading-relaxed text-zinc-300">
+          <p className="mt-4 text-lg sm:text-xl leading-relaxed text-zinc-300">
             Have a tech issue, a slow network, or a broken computer? Reach out directly or submit a service request below.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
           {/* Left Column: Direct Contact Info */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="glass-card p-8 border border-zinc-800/80 neon-border"
-            >
-              <h2 className="text-2xl font-extrabold text-white mb-6 border-b border-zinc-800 pb-4">
+            <div className="card-surface p-6 sm:p-8">
+              <h2 className="text-xl font-bold text-white mb-6 border-b border-zinc-800 pb-4">
                 Direct Channels
               </h2>
-              <div className="flex flex-col gap-5">
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-purple-500/40 transition">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
-                    <Mail size={24} />
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-[#18181c] border border-zinc-800 hover:border-zinc-700 transition">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                    <Mail size={20} />
                   </div>
                   <div>
                     <p className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Email Support</p>
-                    <a href="mailto:admin@triole-it.com" className="text-base font-bold text-white hover:text-purple-300 transition">
+                    <a href="mailto:admin@triole-it.com" className="text-base font-semibold text-white hover:text-purple-300 transition min-h-[44px] inline-flex items-center">
                       admin@triole-it.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-pink-500/40 transition">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
-                    <InstagramIcon size={24} />
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-[#18181c] border border-zinc-800 hover:border-zinc-700 transition">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-400 shrink-0">
+                    <InstagramIcon size={20} />
                   </div>
                   <div>
                     <p className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Instagram DM</p>
-                    <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-white hover:text-pink-300 transition">
+                    <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-pink-300 transition min-h-[44px] inline-flex items-center">
                       @triole_it
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-purple-500/40 transition">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
-                    <MapPin size={24} />
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-[#18181c] border border-zinc-800 hover:border-zinc-700 transition">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                    <MapPin size={20} />
                   </div>
                   <div>
                     <p className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Service Region</p>
-                    <p className="text-base font-bold text-white">Vancouver, BC &amp; Surrounding</p>
+                    <p className="text-base font-semibold text-white">Vancouver, BC &amp; Surrounding</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-zinc-800/80 flex items-center gap-3 text-sm text-zinc-300">
+              <div className="mt-6 pt-6 border-t border-zinc-800 flex items-center gap-3 text-sm text-zinc-300">
                 <Clock size={18} className="text-purple-400 shrink-0" />
-                <span>Response time: <strong className="text-purple-300">2–4 business hours</strong></span>
+                <span>Response time: <strong className="text-white">2–4 business hours</strong></span>
               </div>
-            </motion.div>
+            </div>
 
             {/* Privacy & Wiretap Protection Notice */}
-            <div className="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/40 text-xs text-zinc-400 flex items-start gap-3">
+            <div className="p-5 rounded-lg border border-zinc-800 bg-[#121215] text-xs text-zinc-400 flex items-start gap-3">
               <ShieldCheck size={20} className="text-purple-400 shrink-0 mt-0.5" />
-              <div>
+              <div className="leading-relaxed">
                 <strong className="text-zinc-300 block mb-1">Privacy Guarantee &amp; Input Protection:</strong>
                 All input fields are masked against unauthorized third-party recording scripts. We strictly adhere to COPPA, GDPR, and CASL anti-spam regulations.
               </div>
@@ -179,13 +170,8 @@ const Contacts = () => {
 
           {/* Right Column: Compliant Service Request Form */}
           <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="glass-card p-8 sm:p-10 border border-zinc-800/80 neon-border"
-            >
-              <h2 className="text-2xl font-extrabold text-white mb-2">
+            <div className="card-surface p-6 sm:p-10">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
                 Service Inquiry &amp; Support Request
               </h2>
               <p className="text-sm text-zinc-300 mb-6">
@@ -193,11 +179,11 @@ const Contacts = () => {
               </p>
 
               {formSubmitted ? (
-                <div className="p-8 rounded-2xl bg-purple-950/20 border border-purple-500/30 text-center space-y-4">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-500/20 text-purple-400">
-                    <CheckCircle2 size={36} />
+                <div className="p-8 rounded-lg bg-purple-950/20 border border-purple-500/30 text-center space-y-4">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-lg bg-purple-500/20 text-purple-400">
+                    <CheckCircle2 size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Inquiry Received!</h3>
+                  <h3 className="text-xl font-bold text-white">Inquiry Received!</h3>
                   <p className="text-sm text-zinc-300 leading-relaxed max-w-md mx-auto">
                     Thank you, <strong className="text-white">{formData.name}</strong>. A confirmation has been logged. Our Vancouver support team will reach out to <strong className="text-white">{formData.email}</strong> within 2–4 business hours.
                   </p>
@@ -215,7 +201,7 @@ const Contacts = () => {
                         agreedToTerms: false,
                       });
                     }}
-                    className="btn-secondary text-sm mt-4 px-6 py-2.5"
+                    className="btn-secondary text-sm mt-4"
                   >
                     Submit Another Inquiry
                   </button>
@@ -223,9 +209,9 @@ const Contacts = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   {formError && (
-                    <div className="p-4 rounded-xl border border-red-500/40 bg-red-950/20 text-sm text-red-300 flex items-start gap-3">
+                    <div className="p-4 rounded-lg border border-red-500/40 bg-red-950/20 text-sm text-red-300 flex items-start gap-3">
                       <AlertCircle size={18} className="shrink-0 mt-0.5 text-red-400" />
-                      <div>{formError}</div>
+                      <div className="leading-relaxed">{formError}</div>
                     </div>
                   )}
 
@@ -320,12 +306,12 @@ const Contacts = () => {
 
                   {/* Mandatory Compliance Checkbox 1: COPPA / GDPR-K Age Affirmation */}
                   <div className="pt-2">
-                    <label className="flex items-start gap-3 cursor-pointer">
+                    <label className="flex items-start gap-3 cursor-pointer min-h-[44px]">
                       <input
                         type="checkbox"
                         checked={formData.isAgeVerified}
                         onChange={(e) => setFormData({ ...formData, isAgeVerified: e.target.checked })}
-                        className="mt-1 h-4 w-4 rounded border-zinc-700 bg-zinc-900 text-purple-600 focus:ring-purple-500 accent-purple-600 shrink-0"
+                        className="mt-1 h-5 w-5 rounded border-zinc-700 bg-zinc-900 text-purple-600 focus-visible:outline-2 focus-visible:outline-purple-400 shrink-0"
                       />
                       <span className="text-xs text-zinc-300 leading-relaxed">
                         <strong className="text-white">Age Verification (COPPA &amp; GDPR-K):</strong> I confirm that I am at least 16 years of age (or have parental/guardian consent to submit this inquiry and request IT support services).
@@ -335,20 +321,20 @@ const Contacts = () => {
 
                   {/* Mandatory Compliance Checkbox 2: Terms of Service & Privacy Policy Agreement */}
                   <div>
-                    <label className="flex items-start gap-3 cursor-pointer">
+                    <label className="flex items-start gap-3 cursor-pointer min-h-[44px]">
                       <input
                         type="checkbox"
                         checked={formData.agreedToTerms}
                         onChange={(e) => setFormData({ ...formData, agreedToTerms: e.target.checked })}
-                        className="mt-1 h-4 w-4 rounded border-zinc-700 bg-zinc-900 text-purple-600 focus:ring-purple-500 accent-purple-600 shrink-0"
+                        className="mt-1 h-5 w-5 rounded border-zinc-700 bg-zinc-900 text-purple-600 focus-visible:outline-2 focus-visible:outline-purple-400 shrink-0"
                       />
                       <span className="text-xs text-zinc-300 leading-relaxed">
                         I agree to Triole IT's{' '}
-                        <Link to="/terms" target="_blank" className="text-purple-400 hover:underline font-semibold">
+                        <Link to="/terms" target="_blank" className="text-purple-300 hover:underline font-semibold">
                           Terms of Service
                         </Link>{' '}
                         and acknowledge the data handling practices described in the{' '}
-                        <Link to="/privacy" target="_blank" className="text-purple-400 hover:underline font-semibold">
+                        <Link to="/privacy" target="_blank" className="text-purple-300 hover:underline font-semibold">
                           Privacy Policy
                         </Link>.
                       </span>
@@ -359,24 +345,20 @@ const Contacts = () => {
                     <button
                       type="submit"
                       disabled={!formData.isAgeVerified || !formData.agreedToTerms}
-                      className={`btn-primary w-full text-base font-bold py-3.5 gap-2 ${
-                        !formData.isAgeVerified || !formData.agreedToTerms
-                          ? 'opacity-50 cursor-not-allowed hover:scale-100 hover:shadow-none'
-                          : ''
-                      }`}
+                      className="btn-primary w-full text-base font-bold py-3.5 gap-2"
                     >
                       <Send size={18} />
                       <span>Submit Service Request</span>
                     </button>
                     {(!formData.isAgeVerified || !formData.agreedToTerms) && (
-                      <p className="text-[11px] text-zinc-400 text-center mt-2">
+                      <p className="text-xs text-zinc-400 text-center mt-2.5">
                         * Please verify your age and accept terms above to activate submission.
                       </p>
                     )}
                   </div>
                 </form>
               )}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

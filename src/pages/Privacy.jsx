@@ -18,7 +18,7 @@ export default function Privacy() {
   };
 
   return (
-    <div className="relative overflow-hidden py-16 lg:py-24">
+    <div className="relative overflow-hidden py-12 lg:py-20">
       <SEO
         title="Privacy Policy | Triole IT Support & Repairs"
         description="Read Triole IT's comprehensive Privacy Policy. Learn about how we protect your personal information, our cookie practices, and your privacy rights under GDPR, CCPA, and Canadian PIPEDA."
@@ -26,35 +26,31 @@ export default function Privacy() {
         schemaMarkup={privacySchema}
       />
 
-      {/* Ambient glows */}
-      <div className="glow-primary top-10 -left-20" />
-      <div className="glow-secondary top-96 -right-20" />
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] mb-5">
-            <Shield size={16} className="text-purple-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-300 mb-5">
+            <Shield size={14} className="text-purple-400" />
             <span>Legal Disclosures</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Privacy <span className="gradient-text">Policy</span>
           </h1>
-          <p className="mt-4 text-base text-zinc-400">
+          <p className="mt-4 text-sm sm:text-base text-zinc-400">
             Effective Date &amp; Last Updated: <span className="text-white font-medium">October 1, 2026</span>
           </p>
         </motion.div>
 
-        <div className="space-y-10 text-zinc-300 leading-relaxed text-base">
+        <div className="space-y-8 text-zinc-300 leading-relaxed text-base">
           {/* Section 1: Overview */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <FileText className="text-purple-400" size={24} />
-              1. Overview &amp; Our Commitment
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <FileText className="text-purple-400" size={22} />
+              <span>1. Overview &amp; Our Commitment</span>
             </h2>
             <p className="mb-4">
               Triole IT (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates{' '}
@@ -67,10 +63,10 @@ export default function Privacy() {
           </section>
 
           {/* Section 2: Information We Collect */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <Lock className="text-purple-400" size={24} />
-              2. Personal Identifiable Information (PII) We Collect
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <Lock className="text-purple-400" size={22} />
+              <span>2. Personal Identifiable Information (PII) We Collect</span>
             </h2>
             <p className="mb-4">
               We only collect personal information that is reasonably necessary to fulfill your technical support inquiries, diagnostic assessments, or service repairs:
@@ -92,137 +88,120 @@ export default function Privacy() {
           </section>
 
           {/* Section 3: Third-Party Processors */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <UserCheck className="text-purple-400" size={24} />
-              3. Third-Party Data Processors &amp; Service Providers
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <UserCheck className="text-purple-400" size={22} />
+              <span>3. Third-Party Data Processors &amp; Service Providers</span>
             </h2>
             <p className="mb-4">
-              We do not sell, rent, or trade your personal data. We disclose information only to vetted third-party service providers who assist us in operating our services under strict confidentiality and data processing agreements:
+              We partner with trusted third-party providers strictly for transactional fulfillment, payment gateway processing, website hosting, and customer communications:
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
-                <p className="font-bold text-white">Stripe Inc.</p>
-                <p className="text-sm text-zinc-400 mt-1">Payment processing &amp; PCI-DSS Level 1 compliant checkout.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+              <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
+                <h3 className="font-semibold text-white mb-1">Hosting &amp; DNS</h3>
+                <p className="text-sm text-zinc-400">Cloudflare Pages &amp; Vercel (Edge DNS and SSL protection).</p>
               </div>
-              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
-                <p className="font-bold text-white">Cloudflare, Inc.</p>
-                <p className="text-sm text-zinc-400 mt-1">DNS management, DDoS defense, and edge network security.</p>
+              <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
+                <h3 className="font-semibold text-white mb-1">Payment Gateways</h3>
+                <p className="text-sm text-zinc-400">Stripe Payments (PCI-DSS Level 1 compliant processing).</p>
               </div>
-              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
-                <p className="font-bold text-white">Transactional Email Delivery</p>
-                <p className="text-sm text-zinc-400 mt-1">Direct CAN-SPAM and CASL-compliant customer communications.</p>
+              <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
+                <h3 className="font-semibold text-white mb-1">Fonts &amp; Assets</h3>
+                <p className="text-sm text-zinc-400">Self-hosted via npm (@fontsource/outfit). Zero remote Google Font calls.</p>
               </div>
-              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
-                <p className="font-bold text-white">Hosting Infrastructure</p>
-                <p className="text-sm text-zinc-400 mt-1">High-availability static web hosting with zero external font leakage.</p>
+              <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
+                <h3 className="font-semibold text-white mb-1">Email Infrastructure</h3>
+                <p className="text-sm text-zinc-400">Transactional mail delivered over TLS 1.3 encrypted SMTP.</p>
               </div>
             </div>
+            <p className="text-sm text-zinc-400">
+              Each processor operates under formal Data Processing Addenda (DPAs) binding them to confidentiality and strict non-disclosure obligations.
+            </p>
           </section>
 
-          {/* Section 4: Cookies & Tracking Management */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <Cookie className="text-purple-400" size={24} />
-              4. Cookies, Script Blocking &amp; Session Replay
+          {/* Section 4: Cookie Policy & Consent Controls */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <Cookie className="text-purple-400" size={22} />
+              <span>4. Cookies, Session Trackers &amp; User Autonomy</span>
             </h2>
             <p className="mb-4">
-              In strict accordance with the Munich Court font ruling and wiretap privacy legislation (CIPA / CCPA):
+              Our website uses strictly necessary technical cookies to facilitate site security, routing, and user interface preferences. We adhere to an explicit opt-in model:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-zinc-300 mb-6">
               <li>
-                <strong className="text-white">Zero Remote CDN Font Tracking:</strong> All web fonts (including Outfit) are self-hosted on our static infrastructure. No user IP addresses are leaked to third-party CDNs.
+                <strong className="text-white">Prior Consent Architecture:</strong> Analytical trackers, marketing cookies, and third-party scripts remain deactivated until you provide affirmative consent.
               </li>
               <li>
-                <strong className="text-white">No Automatic Session Replay:</strong> We do not run invasive keystroke loggers, screen recording, or session replay scripts by default (<code className="text-purple-300">recordByDefault: false</code>).
+                <strong className="text-white">Session Recording Protection:</strong> We do not deploy invasive screen capture or keystroke recording scripts.
               </li>
               <li>
-                <strong className="text-white">Strict Script Blocking:</strong> Non-essential analytics and marketing scripts are strictly blocked from loading until affirmative user consent is captured.
+                <strong className="text-white">Persistent Controls:</strong> You may modify your consent selections or revoke prior approvals at any moment.
               </li>
             </ul>
-            <div className="p-4 rounded-xl border border-purple-500/30 bg-purple-950/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div>
-                <p className="font-semibold text-white">Manage Your Cookie Preferences</p>
-                <p className="text-sm text-zinc-300">You can adjust or revoke your cookie permissions at any time.</p>
-              </div>
-              <button
-                type="button"
-                onClick={openCookiePreferences}
-                className="btn-primary text-sm px-4 py-2 shrink-0 gap-2"
-              >
-                <RefreshCw size={15} />
-                <span>Adjust Cookie Settings</span>
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={openCookiePreferences}
+              className="btn-secondary text-sm gap-2"
+            >
+              <RefreshCw size={15} />
+              <span>Open Cookie Preferences Modal</span>
+            </button>
           </section>
 
-          {/* Section 5: Age Verification (COPPA & GDPR-K) */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <AlertCircle className="text-purple-400" size={24} />
-              5. Minor Data &amp; Age Restrictions (COPPA &amp; GDPR-K)
+          {/* Section 5: Children's Privacy */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <AlertCircle className="text-purple-400" size={22} />
+              <span>5. Children's Online Privacy Protection (COPPA &amp; GDPR-K)</span>
             </h2>
             <p className="mb-3">
-              Our website and IT repair services are directed strictly toward adults and business clients. We do not knowingly collect, solicit, or maintain personal identifiable information from minors under the age of 13 (or under the age of 16 in the European Union).
+              Our website and IT repair services are directed strictly toward adult consumers and business operators. We do not knowingly solicit or collect personal information from children under the age of 16 (or under 13 in the United States).
             </p>
             <p>
-              All online customer inquiry forms enforce affirmative age verification confirming that the submitter is at least 16 years of age or has obtained verified parental/guardian consent. If we learn that personal data of a minor has been collected without parental consent, we will promptly delete that information from our systems.
+              If we discover that personal data of a minor has been collected without verifiable parental consent, we will promptly delete that information from our active records. If you believe a minor has submitted inquiries to us, please notify us immediately at{' '}
+              <a href="mailto:privacy@triole-it.com" className="text-purple-300 underline">privacy@triole-it.com</a>.
             </p>
           </section>
 
-          {/* Section 6: CCPA / CPRA & "Do Not Sell" */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <CheckCircle2 className="text-purple-400" size={24} />
-              6. California Consumer Privacy Rights (CCPA / CPRA)
+          {/* Section 6: California Disclosures */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <Shield className="text-purple-400" size={22} />
+              <span>6. California Privacy Rights (CCPA/CPRA &amp; CalOPPA)</span>
             </h2>
             <p className="mb-3">
-              California residents possess specific rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA):
+              Under the California Consumer Privacy Act of 2018 (as amended by CPRA), California residents possess specific statutory rights regarding their personal data:
             </p>
-            <ul className="list-disc pl-6 space-y-2 mb-4 text-zinc-300">
-              <li><strong className="text-white">Right to Know:</strong> Request disclosure of the categories and specific pieces of personal data collected about you.</li>
-              <li><strong className="text-white">Right to Delete:</strong> Request permanent erasure of your personal data.</li>
-              <li><strong className="text-white">Right to Correct:</strong> Request rectification of inaccurate personal details.</li>
-              <li><strong className="text-white">Do Not Sell or Share:</strong> We do not sell personal information for financial consideration. You can confirm your opt-out status anytime via our Cookie Preferences modal.</li>
-              <li><strong className="text-white">Non-Discrimination:</strong> We will never deny services, charge different prices, or provide lesser service quality for exercising privacy rights.</li>
+            <ul className="list-disc pl-6 space-y-2 text-zinc-300 mb-4">
+              <li><strong className="text-white">Right to Know:</strong> Request disclosures of specific personal information categories collected, sold, or shared in the preceding 12 months.</li>
+              <li><strong className="text-white">Right to Delete:</strong> Request erasure of personal data held by us, subject to statutory record-retention exemptions.</li>
+              <li><strong className="text-white">Right to Opt-Out:</strong> Direct us not to sell or share your personal data for cross-context behavioral advertising.</li>
+              <li><strong className="text-white">Right to Non-Discrimination:</strong> We do not offer differential pricing or diminished service levels if you exercise privacy rights.</li>
             </ul>
+            <p className="p-4 rounded-lg bg-[#18181c] border border-purple-500/30 text-sm text-purple-300">
+              <strong>Notice of Non-Sale:</strong> Triole IT has not sold and will not sell any consumer personal information for monetary value or valuable consideration.
+            </p>
           </section>
 
-          {/* Section 7: DSAR - Data Subject Access Requests */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <UserCheck className="text-purple-400" size={24} />
-              7. Submitting Data Subject Access Requests (DSAR)
+          {/* Section 7: Exercising Your Rights */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <CheckCircle2 className="text-purple-400" size={22} />
+              <span>7. Exercising Data Subject Rights &amp; Contact</span>
             </h2>
             <p className="mb-4">
-              Regardless of your geographic location, you may submit a request to view, export, update, or completely delete your personal information held by Triole IT.
+              To exercise your access, correction, deletion, or portability rights under PIPEDA, GDPR, or CCPA, please contact our designated Privacy Officer:
             </p>
-            <div className="p-5 rounded-xl border border-zinc-800 bg-zinc-900/60 space-y-3">
-              <p>
-                <strong>Direct Email for Privacy Requests:</strong>{' '}
-                <a href="mailto:privacy@triole-it.com" className="text-purple-400 hover:text-purple-300 font-semibold underline">
-                  privacy@triole-it.com
-                </a>{' '}
-                (or <a href="mailto:admin@triole-it.com" className="text-purple-400 hover:text-purple-300 underline">admin@triole-it.com</a>)
-              </p>
-              <p className="text-sm text-zinc-400">
-                Please include your full name, email address, and the specific nature of your request (e.g., &quot;Request for Data Deletion&quot; or &quot;Request for Data Access&quot;). We will verify your identity and fulfill verified requests within 30 days at no cost.
-              </p>
+            <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800 text-sm space-y-1.5">
+              <p><strong className="text-white">Triole IT Privacy Officer</strong></p>
+              <p>Email: <a href="mailto:privacy@triole-it.com" className="text-purple-300 underline">privacy@triole-it.com</a></p>
+              <p>General Admin: <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a></p>
+              <p>Physical Location: Vancouver, British Columbia, Canada</p>
             </div>
-          </section>
-
-          {/* Section 8: Contact Information */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4">8. Privacy Contact Information</h2>
-            <p className="mb-3">
-              For any questions, concerns, or complaints regarding this Privacy Policy or our data processing practices, please reach out to:
+            <p className="mt-4 text-xs text-zinc-400">
+              We respond to all verified consumer requests within 30 days (or 45 days under CCPA rules) free of charge.
             </p>
-            <div className="text-zinc-300 space-y-1">
-              <p className="font-semibold text-white">Triole IT - Privacy &amp; Data Governance</p>
-              <p>Location: Vancouver, BC, Canada</p>
-              <p>Email: <a href="mailto:privacy@triole-it.com" className="text-purple-400 hover:text-purple-300">privacy@triole-it.com</a></p>
-              <p>General Support: <a href="mailto:admin@triole-it.com" className="text-purple-400 hover:text-purple-300">admin@triole-it.com</a></p>
-            </div>
           </section>
         </div>
       </div>

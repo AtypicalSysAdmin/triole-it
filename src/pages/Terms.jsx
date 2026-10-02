@@ -17,7 +17,7 @@ export default function Terms() {
   };
 
   return (
-    <div className="relative overflow-hidden py-16 lg:py-24">
+    <div className="relative overflow-hidden py-12 lg:py-20">
       <SEO
         title="Terms of Service | Triole IT Support & Repairs"
         description="Review Triole IT Terms of Service. Understand our repair agreements, service warranties, subscription renewal policies under California ARL, and cancellation rights."
@@ -25,120 +25,111 @@ export default function Terms() {
         schemaMarkup={termsSchema}
       />
 
-      <div className="glow-primary top-10 -left-20" />
-      <div className="glow-secondary top-96 -right-20" />
-
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-wider text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)] mb-5">
-            <FileText size={16} className="text-purple-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-purple-300 mb-5">
+            <FileText size={14} className="text-purple-400" />
             <span>Service Agreement</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Terms of <span className="gradient-text">Service</span>
           </h1>
-          <p className="mt-4 text-base text-zinc-400">
+          <p className="mt-4 text-sm sm:text-base text-zinc-400">
             Last Updated &amp; Effective: <span className="text-white font-medium">October 1, 2026</span>
           </p>
         </motion.div>
 
-        <div className="space-y-10 text-zinc-300 leading-relaxed text-base">
+        <div className="space-y-8 text-zinc-300 leading-relaxed text-base">
           {/* 1. Introduction */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
             <p className="mb-4">
               These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you and Triole IT governing your access to and use of our website (<a href="https://triole-it.com" className="text-purple-300 underline">https://triole-it.com</a>), on-site IT support, remote assistance, and hardware repair services.
             </p>
             <p>
               By scheduling a service, submitting a repair inquiry, or purchasing any subscription retainer, you acknowledge that you have read, understood, and agree to be bound by these Terms and our{' '}
-              <Link to="/privacy" className="text-purple-400 hover:text-purple-300 underline">Privacy Policy</Link>.
+              <Link to="/privacy" className="text-purple-300 hover:text-white underline">Privacy Policy</Link>.
             </p>
           </section>
 
-          {/* 2. Continuous Service & Subscription Terms (California ARL / FTC Compliance) */}
-          <section className="glass-card p-8 sm:p-10 border border-purple-500/30 neon-border">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <RefreshCcw className="text-purple-400" size={24} />
-              2. Subscription Plans &amp; Automatic Renewal Disclosures
-            </h2>
-            <div className="p-4 rounded-xl border border-purple-500/30 bg-purple-950/20 mb-6">
-              <p className="font-semibold text-purple-200 mb-1">
-                Notice Under California Automatic Renewal Law (ARL) &amp; FTC Guidelines:
-              </p>
-              <p className="text-sm text-zinc-300">
-                For clients enrolled in recurring maintenance plans, small business retainers, or continuous remote monitoring, your service will automatically renew at the end of each billing cycle unless cancelled prior to renewal.
-              </p>
-            </div>
-            <ul className="list-disc pl-6 space-y-3 text-zinc-300 mb-6">
+          {/* 2. Service Scope */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">2. Service Scopes, Authorization &amp; Warranties</h2>
+            <p className="mb-4">
+              When delivering computer, laptop, network, or smart device services, Triole IT adheres to professional industry standards:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-zinc-300 mb-4">
               <li>
-                <strong className="text-white">Continuous Service Terms:</strong> Recurring support subscriptions continue automatically at the agreed billing cadence (monthly or annual) and rate until you cancel.
+                <strong className="text-white">Customer Authorization:</strong> You authorize Triole IT to access your equipment, operating systems, and network peripherals for diagnostic, repair, or maintenance purposes.
               </li>
               <li>
-                <strong className="text-white">Notice of Renewal &amp; Rate Changes:</strong> If subscription fees or service terms change, you will receive written email notification at least 30 days prior to the effective date.
+                <strong className="text-white">Customer Data Backup Responsibility:</strong> While Triole IT takes utmost care with client hardware, data loss can occur unexpectedly on degraded storage drives. You are strongly advised to back up critical files prior to service. Triole IT is not liable for pre-existing drive failures or unrecoverable sectors.
               </li>
               <li>
-                <strong className="text-white">Cancellation Rights:</strong> You may cancel continuous services at any time. Cancellation takes effect at the end of your current prepaid billing cycle without penalty or cancellation fees.
-              </li>
-              <li>
-                <strong className="text-white">Simple, One-Click Cancellation Path:</strong> You can cancel your subscription at any time by:
-                <br />
-                (a) Emailing <a href="mailto:admin@triole-it.com?subject=Subscription%20Cancellation%20Request" className="text-purple-400 underline font-semibold">admin@triole-it.com</a> with the subject line &quot;Subscription Cancellation Request&quot;, or
-                <br />
-                (b) Accessing your Stripe customer billing management link provided in every billing receipt.
-              </li>
-              <li>
-                <strong className="text-white">Refund Policy:</strong> Prepaid monthly retainer fees are refundable within 7 days of initial purchase if no remote or on-site support hours were consumed. One-off diagnostic and repair services are backed by our 30-day labor warranty.
+                <strong className="text-white">30-Day Labor Warranty:</strong> All hardware repairs and diagnostic fixes are covered by a 30-day workmanship warranty. If the identical hardware defect recurs within 30 days of service, we will inspect and resolve it at zero supplementary labor cost.
               </li>
             </ul>
           </section>
 
-          {/* 3. Scope of Service & Customer Responsibilities */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-              <ShieldCheck className="text-purple-400" size={24} />
-              3. Service Scope &amp; Customer Data Responsibilities
+          {/* 3. Automatic Renewal Terms */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <RefreshCcw size={22} className="text-purple-400" />
+              <span>3. Continuous Service &amp; Retainer Subscriptions (ARL Disclosures)</span>
             </h2>
             <p className="mb-4">
-              We provide professional computer repair, Wi-Fi networking, software troubleshooting, and hardware installation.
+              Pursuant to the California Automatic Renewal Law (Cal. Bus. &amp; Prof. Code &sect; 17600 et seq.), the FTC Negative Option Rule, and Canadian consumer protection acts, the following statutory terms govern recurring retainer plans:
             </p>
-            <div className="p-4 rounded-xl border border-yellow-500/30 bg-yellow-950/20 text-sm text-yellow-200 mb-4 flex items-start gap-3">
-              <AlertTriangle size={20} className="shrink-0 mt-0.5 text-yellow-400" />
-              <div>
-                <strong className="block font-semibold mb-1">Customer Backup Responsibility:</strong>
-                While Triole IT technicians exercise utmost care during repairs and malware removals, hardware failures can happen unpredictably. Customers are strongly encouraged to maintain independent backups of all critical personal data prior to diagnostic or repair work.
-              </div>
+            <div className="p-4 rounded-lg bg-[#18181c] border border-purple-500/30 text-sm space-y-2 mb-4">
+              <p className="text-white font-semibold">Continuous Service Affirmation:</p>
+              <p>
+                By enrolling in the Residential Tech Guardian ($49/month) or Small Business Pro Retainer ($199/month), you agree that your service will continue indefinitely and your payment method will automatically be charged on a recurring monthly schedule until you cancel.
+              </p>
             </div>
-            <p>
-              Triole IT offers dedicated data backup services prior to repairs upon request.
+            <p className="mb-3 font-semibold text-white">Cancellation Rights &amp; 1-Click Procedure:</p>
+            <p className="mb-4">
+              You possess the absolute statutory right to cancel your subscription at any time without penalty or cancellation fees. You may cancel:
+            </p>
+            <ul className="list-disc pl-6 space-y-1.5 text-zinc-300 mb-4">
+              <li>Directly online via the customer billing management link included in every monthly invoice.</li>
+              <li>By transmitting an email with &quot;Cancel Subscription&quot; in the subject line to <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a>.</li>
+            </ul>
+            <p className="text-sm text-zinc-400">
+              Upon cancellation, recurring charges cease immediately. Services remain active through the end of the current pre-paid monthly billing cycle.
             </p>
           </section>
 
-          {/* 4. Warranties & Limitation of Liability */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4">4. Repair Warranty &amp; Limitation of Liability</h2>
-            <ul className="list-disc pl-6 space-y-2 text-zinc-300">
-              <li>
-                <strong className="text-white">30-Day Labor Warranty:</strong> All hardware repair and setup labor performed by Triole IT is backed by a 30-day workmanship warranty. If the exact same issue reoccurs within 30 days due to workmanship, we will rectify it at no extra labor charge.
-              </li>
-              <li>
-                <strong className="text-white">Parts Manufacturer Warranties:</strong> Replacement hardware components (SSDs, RAM, power supplies) are subject to manufacturer warranties.
-              </li>
-              <li>
-                <strong className="text-white">Limitation:</strong> To the fullest extent permitted by applicable law, Triole IT's aggregate liability for any claim arising from our services is limited to the total fees paid by you for the specific service rendered.
-              </li>
-            </ul>
+          {/* 4. Limitation of Liability */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <AlertTriangle size={22} className="text-yellow-400" />
+              <span>4. Limitation of Liability</span>
+            </h2>
+            <p className="mb-4">
+              To the maximum extent permitted by applicable law in British Columbia and Canada, Triole IT, its technicians, contractors, and agents shall not be liable for indirect, incidental, punitive, or consequential damages resulting from device hardware failure, data loss, or network downtime.
+            </p>
+            <p>
+              In no event shall Triole IT's total cumulative liability exceed the total fee paid by you for the specific service call or repair giving rise to the claim.
+            </p>
           </section>
 
-          {/* 5. Governing Law */}
-          <section className="glass-card p-8 sm:p-10 border border-zinc-800/80">
-            <h2 className="text-2xl font-bold text-white mb-4">5. Governing Law &amp; Jurisdiction</h2>
+          {/* 5. Contact Info */}
+          <section className="card-surface p-6 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <ShieldCheck size={22} className="text-purple-400" />
+              <span>5. Governing Law &amp; Inquiries</span>
+            </h2>
+            <p className="mb-4">
+              These Terms are governed by and construed in accordance with the laws of the Province of British Columbia and the federal laws of Canada applicable therein.
+            </p>
             <p>
-              These Terms are governed by and construed in accordance with the laws of the Province of British Columbia and the federal laws of Canada applicable therein. Any legal disputes shall be brought exclusively before the courts of British Columbia located in Vancouver.
+              For legal inquiries regarding these terms, contact us at{' '}
+              <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a>.
             </p>
           </section>
         </div>

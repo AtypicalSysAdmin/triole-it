@@ -15,16 +15,16 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-[#09090B]/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-[#0a0a0c]/90 backdrop-blur-md">
+      <div className="container-custom flex h-20 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 min-h-[44px]">
           <img
             src={logo}
             alt="Triole IT Logo"
-            className="h-10 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_8px_rgba(168,85,247,0.3)]"
+            className="h-9 w-auto"
           />
-          <span className="text-2xl font-extrabold tracking-tight gradient-text">
+          <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
             TRIOLE IT
           </span>
         </Link>
@@ -35,10 +35,11 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-base font-semibold transition hover:text-white hover:drop-shadow-[0_0_6px_rgba(168,85,247,0.5)] ${location.pathname === link.path
-                  ? 'text-white drop-shadow-[0_0_6px_rgba(168,85,247,0.5)]'
+              className={`text-base font-semibold transition min-h-[44px] inline-flex items-center hover:text-white ${
+                location.pathname === link.path
+                  ? 'text-white border-b-2 border-purple-500'
                   : 'text-zinc-300'
-                }`}
+              }`}
             >
               {link.name}
             </Link>
@@ -46,7 +47,7 @@ export default function Navbar() {
           <a
             href="https://store.triole-it.com"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-xl border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-300 transition-all duration-200 hover:border-purple-500/60 hover:bg-purple-500/20 hover:text-purple-100 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] hover:scale-[1.02]"
+            className="flex items-center gap-2 rounded-lg border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-300 transition hover:border-purple-500/60 hover:bg-purple-500/20 hover:text-white min-h-[44px]"
           >
             <ShoppingBag size={16} className="text-purple-400" />
             <span>Triole Store</span>
@@ -54,25 +55,27 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle with 44x44px Touch Target */}
         <button
-          className="rounded-xl p-2.5 text-zinc-300 hover:bg-zinc-800/80 hover:text-white md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-zinc-300 hover:bg-zinc-800 hover:text-white md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? "Close menu" : "Open navigation menu"}
+          aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <nav className="border-t border-zinc-800 bg-[#09090B]/95 px-5 pb-6 pt-3 md:hidden space-y-1">
+        <nav className="border-t border-zinc-800 bg-[#121215] px-4 pb-6 pt-2 md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`block py-3 text-base font-semibold transition hover:text-white ${location.pathname === link.path ? 'text-purple-400' : 'text-zinc-300'
-                }`}
+              className={`flex items-center min-h-[44px] text-base font-semibold transition hover:text-white ${
+                location.pathname === link.path ? 'text-purple-300 font-bold' : 'text-zinc-300'
+              }`}
               onClick={() => setMobileOpen(false)}
             >
               {link.name}
@@ -81,7 +84,7 @@ export default function Navbar() {
           <a
             href="https://store.triole-it.com"
             rel="noopener noreferrer"
-            className="flex items-center justify-between py-3 text-base font-semibold text-purple-400 hover:text-purple-300 border-t border-zinc-800/60 mt-2 pt-3"
+            className="flex items-center justify-between min-h-[44px] text-base font-semibold text-purple-300 hover:text-white border-t border-zinc-800 mt-2 pt-2"
             onClick={() => setMobileOpen(false)}
           >
             <span className="flex items-center gap-2">
