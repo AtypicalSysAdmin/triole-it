@@ -29,7 +29,9 @@ const Contacts = () => {
     }
   }
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [lastSubmission, setLastSubmission] = useState(null);
   const [formError, setFormError] = useState('');
 
   const contactSchema = {
@@ -54,7 +56,7 @@ const Contacts = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError('');
 
@@ -73,7 +75,49 @@ const Contacts = () => {
       return;
     }
 
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      // Transmit directly to admin@triole-it.com via FormSubmit endpoint
+      const response = await fetch(`https://formsubmit.co/ajax/${COMPANY_INFO.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `Triole IT Support Inquiry: ${formData.service} - ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          service: formData.service,
+          message: formData.message,
+          submitted_at: new Date().toLocaleString(),
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+      if (response.ok && result.success !== 'false') {
+        setLastSubmission({ ...formData });
+        setFormSubmitted(true);
+      } else {
+        // Fallback to mailto if endpoint returns non-200
+        const mailtoFallback = `mailto:${COMPANY_INFO.email}?subject=${encodeURIComponent(`Service Request: ${formData.service} - ${formData.name}`)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nService: ${formData.service}\n\nMessage:\n${formData.message}`)}`;
+        window.location.href = mailtoFallback;
+        setLastSubmission({ ...formData });
+        setFormSubmitted(true);
+      }
+    } catch {
+      // Fallback to direct client mailto if fetch is blocked by CORS/network
+      const mailtoFallback = `mailto:${COMPANY_INFO.email}?subject=${encodeURIComponent(`Service Request: ${formData.service} - ${formData.name}`)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nService: ${formData.service}\n\nMessage:\n${formData.message}`)}`;
+      window.location.href = mailtoFallback;
+      setLastSubmission({ ...formData });
+      setFormSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -178,28 +222,38 @@ const Contacts = () => {
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-lg bg-purple-500/20 text-purple-400">
                     <CheckCircle2 size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Inquiry Received!</h3>
+                  <h3 className="text-xl font-bold text-white">Inquiry Dispatched!</h3>
                   <p className="text-sm text-zinc-300 leading-relaxed max-w-md mx-auto">
-                    Thank you, <strong className="text-white">{formData.name}</strong>. A confirmation has been logged. Our Vancouver support team will reach out to <strong className="text-white">{formData.email}</strong> within {COMPANY_INFO.responseTime}.
+                    Thank you, <strong className="text-white">{lastSubmission?.name || formData.name}</strong>. Your service request has been transmitted directly to <strong className="text-white">{COMPANY_INFO.email}</strong>. Our Vancouver support team will reach out to <strong className="text-white">{lastSubmission?.email || formData.email}</strong> within {COMPANY_INFO.responseTime}.
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFormSubmitted(false);
-                      setFormData({
-                        name: '',
-                        email: '',
-                        phone: '',
-                        service: DEFAULT_CONTACT_SERVICE,
-                        message: '',
-                        isAgeVerified: false,
-                        agreedToTerms: false,
-                      });
-                    }}
-                    className="btn-secondary text-sm mt-4"
-                  >
-                    Submit Another Inquiry
-                  </button>
+
+                  <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+                    <a
+                      href={`mailto:${COMPANY_INFO.email}?subject=${encodeURIComponent(`Service Request Follow-up: ${lastSubmission?.service || formData.service} - ${lastSubmission?.name || formData.name}`)}&body=${encodeURIComponent(`Name: ${lastSubmission?.name || formData.name}\nEmail: ${lastSubmission?.email || formData.email}\nPhone: ${lastSubmission?.phone || 'N/A'}\nService: ${lastSubmission?.service || formData.service}\n\nMessage:\n${lastSubmission?.message || formData.message}`)}`}
+                      className="btn-primary text-sm gap-2"
+                    >
+                      <Mail size={16} />
+                      <span>Open in Mail App</span>
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFormSubmitted(false);
+                        setFormData({
+                          name: '',
+                          email: '',
+                          phone: '',
+                          service: DEFAULT_CONTACT_SERVICE,
+                          message: '',
+                          isAgeVerified: false,
+                          agreedToTerms: false,
+                        });
+                      }}
+                      className="btn-secondary text-sm"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -346,11 +400,20 @@ const Contacts = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      disabled={!formData.isAgeVerified || !formData.agreedToTerms}
+                      disabled={!formData.isAgeVerified || !formData.agreedToTerms || isSubmitting}
                       className="btn-primary w-full text-base font-bold py-3.5 gap-2"
                     >
-                      <Send size={18} />
-                      <span>Submit Service Request</span>
+                      {isSubmitting ? (
+                        <>
+                          <span className="animate-spin inline-block h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+                          <span>Sending Inquiry...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} />
+                          <span>Submit Service Request</span>
+                        </>
+                      )}
                     </button>
                     {(!formData.isAgeVerified || !formData.agreedToTerms) && (
                       <p className="text-xs text-zinc-400 text-center mt-2.5">

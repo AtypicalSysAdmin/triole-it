@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap, Smile, Sparkles, CheckCircle2, ShieldCheck, ShoppingBag } from 'lucide-react';
+import { ArrowRight, Zap, Smile, Sparkles, CheckCircle2, ShieldCheck, ShoppingBag, Clock, MapPin, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { FEATURED_HOME_SERVICES } from '../data/services';
@@ -107,7 +107,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Hero Right Column: Showcase Card */}
+            {/* Hero Right Column: Live Dispatch & Service Status Card */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,49 +116,64 @@ const Home = () => {
             >
               <div className="card-surface p-6 sm:p-8">
                 <div className="flex items-center justify-between border-b border-zinc-800 pb-4 mb-6">
-                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                    Service Standards
-                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                      Vancouver Dispatch Active
+                    </span>
+                  </div>
                   <span className="rounded-full bg-purple-500/20 px-2.5 py-1 text-xs font-semibold text-purple-300 border border-purple-500/30">
-                    Available Today
+                    Same-Day Triage
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-5">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 mb-3">
-                      <Zap size={20} />
+                <div className="space-y-3.5 mb-6">
+                  <div className="flex items-center justify-between p-3.5 rounded-lg bg-[#18181c] border border-zinc-800/80">
+                    <div className="flex items-center gap-3">
+                      <Clock size={18} className="text-purple-400 shrink-0" />
+                      <span className="text-sm font-medium text-zinc-300">Response Window</span>
                     </div>
-                    <h3 className="text-base font-bold text-white">Rapid Turnaround</h3>
-                    <p className="mt-1.5 text-sm text-zinc-300 leading-relaxed">
-                      Same-day diagnostics and priority repairs for critical device issues.
-                    </p>
+                    <span className="text-sm font-bold text-white">Under {COMPANY_INFO.responseTime}</span>
                   </div>
 
-                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-5">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-400 mb-3">
-                      <Smile size={20} />
+                  <div className="flex items-center justify-between p-3.5 rounded-lg bg-[#18181c] border border-zinc-800/80">
+                    <div className="flex items-center gap-3">
+                      <MapPin size={18} className="text-pink-400 shrink-0" />
+                      <span className="text-sm font-medium text-zinc-300">Service Coverage</span>
                     </div>
-                    <h3 className="text-base font-bold text-white">Friendly Support</h3>
-                    <p className="mt-1.5 text-sm text-zinc-300 leading-relaxed">
-                      Clear explanations in plain language with zero confusing jargon.
-                    </p>
+                    <span className="text-sm font-bold text-white">Vancouver &amp; Metro</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3.5 rounded-lg bg-[#18181c] border border-zinc-800/80">
+                    <div className="flex items-center gap-3">
+                      <Wrench size={18} className="text-purple-400 shrink-0" />
+                      <span className="text-sm font-medium text-zinc-300">Support Mode</span>
+                    </div>
+                    <span className="text-sm font-bold text-white">On-Site &amp; Remote</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3.5 rounded-lg bg-[#18181c] border border-zinc-800/80">
+                    <div className="flex items-center gap-3">
+                      <ShieldCheck size={18} className="text-emerald-400 shrink-0" />
+                      <span className="text-sm font-medium text-zinc-300">Labor Warranty</span>
+                    </div>
+                    <span className="text-sm font-bold text-white">30-Day Guarantee</span>
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-lg border border-purple-500/30 bg-purple-950/20 p-4 sm:p-5 flex items-center justify-between gap-3">
-                  <div>
-                    <p className="text-sm font-semibold text-purple-300">Need On-Site or Remote Help?</p>
-                    <p className="text-xs sm:text-sm text-zinc-300">Average response within {COMPANY_INFO.responseTime}</p>
-                  </div>
-                  <Link
-                    to="/contacts"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-300 hover:text-white transition shrink-0 min-h-[44px] min-w-[44px]"
-                  >
-                    <span>Book Now</span>
-                    <ArrowRight size={14} />
-                  </Link>
-                </div>
+                <Link
+                  to="/contacts"
+                  className="btn-primary w-full text-base font-bold py-3.5 text-center justify-center gap-2"
+                >
+                  <span>Book Immediate Diagnostics</span>
+                  <ArrowRight size={16} />
+                </Link>
+                <p className="text-xs text-zinc-400 text-center mt-3">
+                  Local Vancouver technicians &bull; Flat rates upfront
+                </p>
               </div>
             </motion.div>
 
@@ -166,7 +181,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Core Pillars Section (Replaces the duplicate repair cards with distinct trust pillars) */}
+      {/* Core Pillars Section (Pillars are now completely distinct from the Hero Dispatch card) */}
       <section className="relative border-y border-zinc-800 bg-[#121215] py-16">
         <div className="container-custom">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
