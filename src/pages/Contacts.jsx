@@ -78,8 +78,9 @@ const Contacts = () => {
     setIsSubmitting(true);
 
     try {
-      // Transmit directly to admin@triole-it.com via FormSubmit endpoint
-      const response = await fetch(`https://formsubmit.co/ajax/${COMPANY_INFO.email}`, {
+      // Transmit securely to admin@triole-it.com via FormSubmit endpoint (using obfuscated token)
+      const formEndpoint = COMPANY_INFO.formSubmitToken || COMPANY_INFO.email;
+      const response = await fetch(`https://formsubmit.co/ajax/${formEndpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

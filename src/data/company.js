@@ -8,6 +8,7 @@ export const COMPANY_INFO = {
   website: 'https://triole-it.com',
   email: 'admin@triole-it.com',
   supportEmail: 'admin@triole-it.com',
+  formSubmitToken: '84721cd2e9504c59aaa2028425dd5e15',
   privacyEmail: 'privacy@triole-it.com',
   copyrightEmail: 'copyright@triole-it.com',
   storeUrl: 'https://store.triole-it.com',
