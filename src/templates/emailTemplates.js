@@ -8,19 +8,9 @@
  * 4. Clear statement of commercial intent or transactional nature.
  */
 
-export const COMPANY_LEGAL_INFO = {
-  name: 'Triole IT',
-  email: 'admin@triole-it.com',
-  website: 'https://triole-it.com',
-  phone: 'Vancouver Local Support',
-  address: {
-    street: 'Support Services HQ',
-    city: 'Vancouver',
-    province: 'BC',
-    country: 'Canada',
-  },
-  unsubscribeUrl: 'https://triole-it.com/contacts?optout=true',
-};
+import { COMPANY_LEGAL_INFO } from '../data/company';
+
+export { COMPANY_LEGAL_INFO };
 
 /**
  * Standard legal footer injected into every outgoing email.

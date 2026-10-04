@@ -2,17 +2,18 @@ import { motion } from 'framer-motion';
 import { FileText, AlertTriangle, ShieldCheck, RefreshCcw } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { COMPANY_INFO } from '../data/company';
 
 export default function Terms() {
   const termsSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Terms of Service - Triole IT",
+    "name": `Terms of Service - ${COMPANY_INFO.name}`,
     "description": "Triole IT Terms of Service, including service scopes, diagnostic warranties, continuous subscription terms, and cancellation policies.",
     "publisher": {
       "@type": "Organization",
-      "name": "Triole IT",
-      "url": "https://triole-it.com"
+      "name": COMPANY_INFO.name,
+      "url": COMPANY_INFO.website
     }
   };
 
@@ -49,7 +50,7 @@ export default function Terms() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
             <p className="mb-4">
-              These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you and Triole IT governing your access to and use of our website (<a href="https://triole-it.com" className="text-purple-300 underline">https://triole-it.com</a>), on-site IT support, remote assistance, and hardware repair services.
+              These Terms of Service (&quot;Terms&quot;) constitute a legally binding agreement between you and Triole IT governing your access to and use of our website (<a href={COMPANY_INFO.website} className="text-purple-300 underline">{COMPANY_INFO.website}</a>), on-site IT support, remote assistance, and hardware repair services.
             </p>
             <p>
               By scheduling a service, submitting a repair inquiry, or purchasing any subscription retainer, you acknowledge that you have read, understood, and agree to be bound by these Terms and our{' '}
@@ -97,7 +98,7 @@ export default function Terms() {
             </p>
             <ul className="list-disc pl-6 space-y-1.5 text-zinc-300 mb-4">
               <li>Directly online via the customer billing management link included in every monthly invoice.</li>
-              <li>By transmitting an email with &quot;Cancel Subscription&quot; in the subject line to <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a>.</li>
+              <li>By transmitting an email with &quot;Cancel Subscription&quot; in the subject line to <a href={`mailto:${COMPANY_INFO.email}`} className="text-purple-300 underline">{COMPANY_INFO.email}</a>.</li>
             </ul>
             <p className="text-sm text-zinc-400">
               Upon cancellation, recurring charges cease immediately. Services remain active through the end of the current pre-paid monthly billing cycle.
@@ -129,7 +130,7 @@ export default function Terms() {
             </p>
             <p>
               For legal inquiries regarding these terms, contact us at{' '}
-              <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a>.
+              <a href={`mailto:${COMPANY_INFO.email}`} className="text-purple-300 underline">{COMPANY_INFO.email}</a>.
             </p>
           </section>
         </div>

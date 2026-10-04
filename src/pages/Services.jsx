@@ -1,94 +1,17 @@
 import { motion } from 'framer-motion';
-import { Laptop, Wifi, ShieldAlert, Database, Printer, Settings, Briefcase, BookOpen, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { SERVICES, MAINTENANCE_PLANS } from '../data/services';
+import { COMPANY_INFO } from '../data/company';
 
 const Services = () => {
-  const allServices = [
-    {
-      title: "Computer Repair & Upgrades",
-      desc: "Fast hardware diagnostics, laptop screen replacements, keyboard repairs, and SSD/RAM upgrades to speed up sluggish devices.",
-      icon: <Laptop size={28} />,
-      color: "#c084fc"
-    },
-    {
-      title: "Wi-Fi & Network Setup",
-      desc: "Setting up routers, Wi-Fi mesh systems, range extenders, and troubleshooting connectivity issues or internet dropouts.",
-      icon: <Wifi size={28} />,
-      color: "#f472b6"
-    },
-    {
-      title: "Virus & Malware Removal",
-      desc: "Comprehensive system scans to safely remove spyware, adware, viruses, and ransomware, and installing reliable antivirus protection.",
-      icon: <ShieldAlert size={28} />,
-      color: "#c084fc"
-    },
-    {
-      title: "Data Backup & Recovery",
-      desc: "Recovering lost files from failing or crashed drives, and setting up automatic cloud or physical backup systems for peace of mind.",
-      icon: <Database size={28} />,
-      color: "#f472b6"
-    },
-    {
-      title: "Printer & Device Setup",
-      desc: "Configuring home and office printers, scanner setups, smart TVs, security cameras, and other smart home accessories.",
-      icon: <Printer size={28} />,
-      color: "#c084fc"
-    },
-    {
-      title: "OS & Software Troubleshooting",
-      desc: "Resolving Windows/Mac operating system errors, email client configurations, software installation errors, and app updates.",
-      icon: <Settings size={28} />,
-      color: "#f472b6"
-    },
-    {
-      title: "Small Business IT Support",
-      desc: "Setting up office computers, shared network storage (NAS), email domains, user accounts, and local network security solutions.",
-      icon: <Briefcase size={28} />,
-      color: "#c084fc"
-    },
-    {
-      title: "Tech Training & Guidance",
-      desc: "Patient, jargon-free tutoring to help you or your team learn how to use new devices, operating systems, or specific apps at your own pace.",
-      icon: <BookOpen size={28} />,
-      color: "#f472b6"
-    }
-  ];
-
-  const maintenancePlans = [
-    {
-      name: "Residential Tech Guardian",
-      cadence: "Monthly Retainer",
-      price: "$49 / month",
-      billingDetails: "Billed monthly on the 1st. Continuous service auto-renews until cancelled.",
-      features: [
-        "Quarterly remote speed tune-up & virus audit",
-        "Priority queue for emergency computer repairs",
-        "15% discount on all on-site labor & diagnostic visits",
-        "Unlimited remote quick-question guidance"
-      ]
-    },
-    {
-      name: "Small Business Pro Retainer",
-      cadence: "Monthly Retainer",
-      price: "$199 / month",
-      billingDetails: "Billed monthly. Continuous service auto-renews until cancelled.",
-      popular: true,
-      features: [
-        "Up to 5 business workstations & network router monitored",
-        "Automated encrypted cloud backup verification",
-        "Guaranteed 2-hour priority emergency response",
-        "Monthly security patch management & Wi-Fi audit"
-      ]
-    }
-  ];
-
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Triole IT Services Catalog",
+    "name": `${COMPANY_INFO.name} Services Catalog`,
     "description": "Friendly and professional local IT support services including computer repairs, Wi-Fi and network setup, virus removal, device installations, and tech training.",
-    "itemListElement": allServices.map((service, index) => ({
+    "itemListElement": SERVICES.map((service, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
@@ -97,8 +20,8 @@ const Services = () => {
         "description": service.desc,
         "provider": {
           "@type": "Organization",
-          "name": "Triole IT",
-          "url": "https://triole-it.com"
+          "name": COMPANY_INFO.name,
+          "url": COMPANY_INFO.website
         }
       }
     }))
@@ -134,9 +57,9 @@ const Services = () => {
 
         {/* 1. On-Demand Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {allServices.map((service, i) => (
+          {SERVICES.map((service) => (
             <div
-              key={i}
+              key={service.id}
               className="card-interactive p-6 flex flex-col justify-between"
             >
               <div>
@@ -155,7 +78,7 @@ const Services = () => {
               </div>
 
               <Link
-                to="/contacts"
+                to={`/contacts?service=${encodeURIComponent(service.title)}`}
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-purple-300 hover:text-white transition min-h-[44px]"
               >
                 <span>Inquire now</span>
@@ -178,9 +101,9 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {maintenancePlans.map((plan, i) => (
+            {MAINTENANCE_PLANS.map((plan) => (
               <div
-                key={i}
+                key={plan.id}
                 className={`card-surface p-6 sm:p-8 flex flex-col justify-between relative ${
                   plan.popular ? 'border-purple-500/50' : ''
                 }`}
@@ -214,12 +137,12 @@ const Services = () => {
                       Continuous Service Disclosure:
                     </p>
                     <p>
-                      Your subscription will automatically renew each month at the current rate until cancelled. You may cancel at any time with 1 click by emailing <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a> or via your customer billing link. No cancellation fees.
+                      Your subscription will automatically renew each month at the current rate until cancelled. You may cancel at any time with 1 click by emailing <a href={`mailto:${COMPANY_INFO.email}`} className="text-purple-300 underline">{COMPANY_INFO.email}</a> or via your customer billing link. No cancellation fees.
                     </p>
                   </div>
 
                   <Link
-                    to="/contacts"
+                    to={`/contacts?service=${encodeURIComponent(plan.name)}`}
                     className="btn-primary w-full text-base font-bold py-3 text-center justify-center gap-2"
                   >
                     <span>Inquire About Plan</span>
@@ -247,7 +170,7 @@ const Services = () => {
               <ArrowRight size={18} />
             </Link>
             <a
-              href="https://store.triole-it.com"
+              href={COMPANY_INFO.storeUrl}
               rel="noopener noreferrer"
               className="btn-secondary text-base"
             >

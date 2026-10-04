@@ -2,18 +2,19 @@ import { motion } from 'framer-motion';
 import { Shield, Lock, FileText, CheckCircle2, UserCheck, AlertCircle, Cookie, RefreshCw } from 'lucide-react';
 import SEO from '../components/SEO';
 import { openCookiePreferences } from '../utils/consentManager';
+import { COMPANY_INFO } from '../data/company';
 
 export default function Privacy() {
   const privacySchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Privacy Policy - Triole IT",
+    "name": `Privacy Policy - ${COMPANY_INFO.name}`,
     "description": "Triole IT Privacy Policy outlining data protection practices, COPPA/GDPR compliance, CCPA disclosures, and Data Subject Access Request mechanisms.",
     "publisher": {
       "@type": "Organization",
-      "name": "Triole IT",
-      "url": "https://triole-it.com",
-      "email": "privacy@triole-it.com"
+      "name": COMPANY_INFO.name,
+      "url": COMPANY_INFO.website,
+      "email": COMPANY_INFO.privacyEmail
     }
   };
 

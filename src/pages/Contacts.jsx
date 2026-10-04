@@ -1,38 +1,33 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Sparkles, Clock, Send, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import SEO from '../components/SEO';
-
-const InstagramIcon = ({ size = 20 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
+import InstagramIcon from '../components/icons/InstagramIcon';
+import { SERVICE_OPTIONS, DEFAULT_CONTACT_SERVICE, MAINTENANCE_PLANS } from '../data/services';
+import { COMPANY_INFO } from '../data/company';
 
 const Contacts = () => {
+  const [searchParams] = useSearchParams();
+  const requestedService = searchParams.get('service');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    service: 'Computer Repair & Diagnostics',
+    service: requestedService || DEFAULT_CONTACT_SERVICE,
     message: '',
     isAgeVerified: false,
     agreedToTerms: false,
   });
+
+  const [prevRequestedService, setPrevRequestedService] = useState(requestedService);
+  if (requestedService !== prevRequestedService) {
+    setPrevRequestedService(requestedService);
+    if (requestedService) {
+      setFormData((prev) => ({ ...prev, service: requestedService }));
+    }
+  }
 
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState('');
@@ -40,21 +35,21 @@ const Contacts = () => {
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact Us - Triole IT",
+    "name": `Contact Us - ${COMPANY_INFO.name}`,
     "description": "Get in touch with Triole IT's support team in Vancouver for local IT support, computer repairs, and network troubleshooting.",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Triole IT",
-      "url": "https://triole-it.com",
-      "email": "admin@triole-it.com",
+      "name": COMPANY_INFO.name,
+      "url": COMPANY_INFO.website,
+      "email": COMPANY_INFO.email,
       "sameAs": [
-        "https://www.instagram.com/triole_it/"
+        COMPANY_INFO.socials.instagram
       ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Vancouver",
-        "addressRegion": "BC",
-        "addressCountry": "Canada"
+        "addressLocality": COMPANY_INFO.address.city,
+        "addressRegion": COMPANY_INFO.address.region,
+        "addressCountry": COMPANY_INFO.address.country
       }
     }
   };
@@ -123,8 +118,8 @@ const Contacts = () => {
                   </div>
                   <div>
                     <p className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Email Support</p>
-                    <a href="mailto:admin@triole-it.com" className="text-base font-semibold text-white hover:text-purple-300 transition min-h-[44px] inline-flex items-center">
-                      admin@triole-it.com
+                    <a href={`mailto:${COMPANY_INFO.email}`} className="text-base font-semibold text-white hover:text-purple-300 transition min-h-[44px] inline-flex items-center">
+                      {COMPANY_INFO.email}
                     </a>
                   </div>
                 </div>
@@ -135,8 +130,8 @@ const Contacts = () => {
                   </div>
                   <div>
                     <p className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Instagram DM</p>
-                    <a href="https://instagram.com/triole_it" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-pink-300 transition min-h-[44px] inline-flex items-center">
-                      @triole_it
+                    <a href={COMPANY_INFO.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-pink-300 transition min-h-[44px] inline-flex items-center">
+                      {COMPANY_INFO.instagramHandle}
                     </a>
                   </div>
                 </div>
@@ -147,14 +142,14 @@ const Contacts = () => {
                   </div>
                   <div>
                     <p className="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Service Region</p>
-                    <p className="text-base font-semibold text-white">Vancouver, BC &amp; Surrounding</p>
+                    <p className="text-base font-semibold text-white">{COMPANY_INFO.address.display}</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 pt-6 border-t border-zinc-800 flex items-center gap-3 text-sm text-zinc-300">
                 <Clock size={18} className="text-purple-400 shrink-0" />
-                <span>Response time: <strong className="text-white">2–4 business hours</strong></span>
+                <span>Response time: <strong className="text-white">{COMPANY_INFO.responseTime}</strong></span>
               </div>
             </div>
 
@@ -185,7 +180,7 @@ const Contacts = () => {
                   </div>
                   <h3 className="text-xl font-bold text-white">Inquiry Received!</h3>
                   <p className="text-sm text-zinc-300 leading-relaxed max-w-md mx-auto">
-                    Thank you, <strong className="text-white">{formData.name}</strong>. A confirmation has been logged. Our Vancouver support team will reach out to <strong className="text-white">{formData.email}</strong> within 2–4 business hours.
+                    Thank you, <strong className="text-white">{formData.name}</strong>. A confirmation has been logged. Our Vancouver support team will reach out to <strong className="text-white">{formData.email}</strong> within {COMPANY_INFO.responseTime}.
                   </p>
                   <button
                     type="button"
@@ -195,7 +190,7 @@ const Contacts = () => {
                         name: '',
                         email: '',
                         phone: '',
-                        service: 'Computer Repair & Diagnostics',
+                        service: DEFAULT_CONTACT_SERVICE,
                         message: '',
                         isAgeVerified: false,
                         agreedToTerms: false,
@@ -276,13 +271,20 @@ const Contacts = () => {
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="input-field"
                       >
-                        <option value="Computer Repair & Upgrades">Computer Repair &amp; Upgrades</option>
-                        <option value="Wi-Fi & Network Setup">Wi-Fi &amp; Network Setup</option>
-                        <option value="Virus & Malware Removal">Virus &amp; Malware Removal</option>
-                        <option value="Data Backup & Recovery">Data Backup &amp; Recovery</option>
-                        <option value="Printer & Smart Device Setup">Printer &amp; Smart Device Setup</option>
-                        <option value="Small Business Retainer Support">Small Business Retainer Support</option>
-                        <option value="General Tech Training">General Tech Training</option>
+                        <optgroup label="Standard IT Services">
+                          {SERVICE_OPTIONS.map((opt) => (
+                            <option key={opt} value={opt}>
+                              {opt}
+                            </option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="Continuous Retainer Plans">
+                          {MAINTENANCE_PLANS.map((plan) => (
+                            <option key={plan.id} value={plan.name}>
+                              {plan.name} ({plan.price})
+                            </option>
+                          ))}
+                        </optgroup>
                       </select>
                     </div>
                   </div>

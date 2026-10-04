@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, Menu, X, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import logo from '../assets/logo.png';
+import { COMPANY_INFO } from '../data/company';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://store.triole-it.com"
+            href={COMPANY_INFO.storeUrl}
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-lg border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm font-semibold text-purple-300 transition hover:border-purple-500/60 hover:bg-purple-500/20 hover:text-white min-h-[44px]"
           >
@@ -82,7 +83,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://store.triole-it.com"
+            href={COMPANY_INFO.storeUrl}
             rel="noopener noreferrer"
             className="flex items-center justify-between min-h-[44px] text-base font-semibold text-purple-300 hover:text-white border-t border-zinc-800 mt-2 pt-2"
             onClick={() => setMobileOpen(false)}

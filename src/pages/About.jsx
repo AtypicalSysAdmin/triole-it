@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Target, Users, Zap, Award, Sparkles } from 'lucide-react';
 import SEO from '../components/SEO';
+import { COMPANY_INFO } from '../data/company';
 
 const About = () => {
   const stats = [
@@ -13,14 +14,14 @@ const About = () => {
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About Us - Triole IT",
+    "name": `About Us - ${COMPANY_INFO.name}`,
     "description": "Learn about Triole IT's mission, values, and our team of friendly tech support experts. Providing reliable, local computer repairs and IT support.",
     "publisher": {
       "@type": "Organization",
-      "name": "Triole IT",
+      "name": COMPANY_INFO.name,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://triole-it.com/logo.png"
+        "url": COMPANY_INFO.logoUrl
       }
     }
   };

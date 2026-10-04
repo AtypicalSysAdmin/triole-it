@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ShieldAlert, MapPin, FileCheck, AlertCircle, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import SEO from '../components/SEO';
+import { COMPANY_INFO } from '../data/company';
 
 export default function DMCA() {
   const [copied, setCopied] = useState(false);
@@ -43,13 +44,13 @@ Email: copyright@triole-it.com
   const dmcaSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "DMCA & Copyright Policy - Triole IT",
+    "name": `DMCA & Copyright Policy - ${COMPANY_INFO.name}`,
     "description": "Triole IT Designated Copyright Agent contact information, DMCA safe harbor notice, and takedown procedures under 17 U.S.C. § 512.",
     "publisher": {
       "@type": "Organization",
-      "name": "Triole IT",
-      "url": "https://triole-it.com",
-      "email": "copyright@triole-it.com"
+      "name": COMPANY_INFO.name,
+      "url": COMPANY_INFO.website,
+      "email": COMPANY_INFO.copyrightEmail
     }
   };
 
