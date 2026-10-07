@@ -16,7 +16,10 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-[#0a0a0c]/90 backdrop-blur-md">
+    <header
+      className="sticky top-0 z-50 border-b border-zinc-800 site-header"
+      style={{ backgroundColor: '#0a0a0c' }}
+    >
       <div className="container-custom flex h-20 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 min-h-[44px]">

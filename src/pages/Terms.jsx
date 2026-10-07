@@ -9,7 +9,7 @@ export default function Terms() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": `Terms of Service - ${COMPANY_INFO.name}`,
-    "description": "Triole IT Terms of Service, including service scopes, diagnostic warranties, continuous subscription terms, and cancellation policies.",
+    "description": "Triole IT Terms of Service, including service scopes, diagnostic warranties, flat-rate pricing, and cancellation policies.",
     "publisher": {
       "@type": "Organization",
       "name": COMPANY_INFO.name,
@@ -21,8 +21,12 @@ export default function Terms() {
     <div className="relative overflow-hidden py-12 lg:py-20">
       <SEO
         title="Terms of Service | Triole IT Support & Repairs"
-        description="Review Triole IT Terms of Service. Understand our repair agreements, service warranties, subscription renewal policies under California ARL, and cancellation rights."
-        keywords="terms of service, IT service terms, computer repair warranty, subscription terms, cancellation policy"
+        description="Review Triole IT Terms of Service. Understand our repair agreements, service warranties, upfront flat-rate quotes, and appointment cancellation policies."
+        keywords="terms of service, IT service terms, computer repair warranty, service quotes, cancellation policy"
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Terms of Service", item: "/terms" }
+        ]}
         schemaMarkup={termsSchema}
       />
 
@@ -77,31 +81,31 @@ export default function Terms() {
             </ul>
           </section>
 
-          {/* 3. Automatic Renewal Terms */}
+          {/* 3. Pricing, Quotes & Cancellation Terms */}
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <RefreshCcw size={22} className="text-purple-400" />
-              <span>3. Continuous Service &amp; Retainer Subscriptions (ARL Disclosures)</span>
+              <span>3. Upfront Pricing, Payment &amp; Cancellation</span>
             </h2>
             <p className="mb-4">
-              Pursuant to the California Automatic Renewal Law (Cal. Bus. &amp; Prof. Code &sect; 17600 et seq.), the FTC Negative Option Rule, and Canadian consumer protection acts, the following statutory terms govern recurring retainer plans:
+              All services provided by Triole IT are performed on an upfront flat-rate or agreed estimate basis per individual work order. We do not impose automatic recurring renewals or hidden subscription fees:
             </p>
             <div className="p-4 rounded-lg bg-[#18181c] border border-purple-500/30 text-sm space-y-2 mb-4">
-              <p className="text-white font-semibold">Continuous Service Affirmation:</p>
+              <p className="text-white font-semibold">Transparent Quotations:</p>
               <p>
-                By enrolling in the Residential Tech Guardian ($49/month) or Small Business Pro Retainer ($199/month), you agree that your service will continue indefinitely and your payment method will automatically be charged on a recurring monthly schedule until you cancel.
+                Prior to commencing hardware repairs or on-site support, our technicians provide a clear, binding estimate. You will never be billed for additional labor or components without prior explicit authorization.
               </p>
             </div>
-            <p className="mb-3 font-semibold text-white">Cancellation Rights &amp; 1-Click Procedure:</p>
+            <p className="mb-3 font-semibold text-white">Appointment Rescheduling &amp; Cancellation:</p>
             <p className="mb-4">
-              You possess the absolute statutory right to cancel your subscription at any time without penalty or cancellation fees. You may cancel:
+              Clients may reschedule or cancel scheduled on-site appointments without penalty by notifying Triole IT at least 2 hours prior to the scheduled dispatch window. You may notify us by:
             </p>
             <ul className="list-disc pl-6 space-y-1.5 text-zinc-300 mb-4">
-              <li>Directly online via the customer billing management link included in every monthly invoice.</li>
-              <li>By transmitting an email with &quot;Cancel Subscription&quot; in the subject line to <a href={`mailto:${COMPANY_INFO.email}`} className="text-purple-300 underline">{COMPANY_INFO.email}</a>.</li>
+              <li>Calling or messaging our Vancouver support desk directly.</li>
+              <li>Transmitting an email with &quot;Cancel Appointment&quot; in the subject line to <a href={`mailto:${COMPANY_INFO.email}`} className="text-purple-300 underline">{COMPANY_INFO.email}</a>.</li>
             </ul>
             <p className="text-sm text-zinc-400">
-              Upon cancellation, recurring charges cease immediately. Services remain active through the end of the current pre-paid monthly billing cycle.
+              Payments are due upon completion of approved repair or diagnostic deliverables.
             </p>
           </section>
 

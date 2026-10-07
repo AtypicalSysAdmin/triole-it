@@ -92,32 +92,3 @@ export const SERVICE_OPTIONS = SERVICES.map((service) => service.title);
 
 export const DEFAULT_CONTACT_SERVICE = SERVICES[0].title; // "Computer Repair & Upgrades"
 
-export const MAINTENANCE_PLANS = [
-  {
-    id: "residential-guardian",
-    name: "Residential Tech Guardian",
-    cadence: "Monthly Retainer",
-    price: "$49 / month",
-    billingDetails: "Billed monthly on the 1st. Continuous service auto-renews until cancelled.",
-    features: [
-      "Quarterly remote speed tune-up & virus audit",
-      "Priority queue for emergency computer repairs",
-      "15% discount on all on-site labor & diagnostic visits",
-      "Unlimited remote quick-question guidance",
-    ],
-  },
-  {
-    id: "business-retainer",
-    name: "Small Business Pro Retainer",
-    cadence: "Monthly Retainer",
-    price: "$199 / month",
-    billingDetails: "Billed monthly. Continuous service auto-renews until cancelled.",
-    popular: true,
-    features: [
-      "Up to 5 business workstations & network router monitored",
-      "Automated encrypted cloud backup verification",
-      "Guaranteed 2-hour priority emergency response",
-      "Monthly security patch management & Wi-Fi audit",
-    ],
-  },
-];

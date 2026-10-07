@@ -29,12 +29,23 @@ const Home = () => {
 
   const homeSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ComputerRepairService", "ProfessionalService"],
     "name": COMPANY_INFO.name,
     "image": COMPANY_INFO.logoUrl,
     "url": COMPANY_INFO.website,
     "email": COMPANY_INFO.email,
     "description": "Triole IT provides friendly, professional, and affordable local IT support, computer repairs, network troubleshooting, and software setups for home users and small businesses.",
+    "priceRange": "$$",
+    "currenciesAccepted": "CAD",
+    "paymentAccepted": "Cash, Credit Card, Interac e-Transfer",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "sameAs": [
       COMPANY_INFO.socials.instagram
     ],
@@ -43,7 +54,90 @@ const Home = () => {
       "addressLocality": COMPANY_INFO.address.city,
       "addressRegion": COMPANY_INFO.address.region,
       "addressCountry": COMPANY_INFO.address.countryCode
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Vancouver"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Greater Vancouver"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "British Columbia"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT Support and Computer Repair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Computer and Laptop Repair",
+            "description": "Hardware diagnostics, laptop screen replacements, battery renewals, and SSD/RAM upgrades."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wi-Fi and Home Network Setup",
+            "description": "Mesh Wi-Fi installation, dead-zone resolution, router security, and troubleshooting."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Virus and Malware Removal",
+            "description": "Comprehensive scan, malicious software remediation, and antivirus installation."
+          }
+        }
+      ]
     }
+  };
+
+  const homeFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What areas do you provide IT support and computer repairs in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Triole IT provides on-site IT support across Vancouver, Burnaby, Richmond, and the surrounding Lower Mainland area, as well as fast remote diagnostics and support across Canada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can you diagnose and fix computer issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most standard diagnostics are performed with fast turnaround (typically within 24–48 hours). For urgent issues, expedited same-day diagnostic triage is available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer upfront flat rates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we believe in transparent pricing with clear upfront quotes before any work begins, backed by a 30-day workmanship guarantee and zero hidden surcharges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you support small businesses as well as residential home users?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We help individual home users with personal devices, Wi-Fi, and smart tech, and assist small businesses with office network setups, workstations, cloud backups, and ongoing maintenance."
+        }
+      }
+    ]
   };
 
   return (
@@ -52,7 +146,7 @@ const Home = () => {
         title="Triole IT | Local IT Support & Computer Repair Services"
         description="Triole IT provides friendly, professional, and affordable local IT support, computer and laptop repairs, network troubleshooting, and device setup for home users and small businesses."
         keywords="local IT support, computer repairs, laptop repair, Wi-Fi troubleshooting, network setup, printer setup, virus removal, smart home setup, Vancouver tech support"
-        schemaMarkup={homeSchema}
+        schemaMarkup={[homeSchema, homeFaqSchema]}
       />
 
       {/* Hero Section */}
@@ -248,7 +342,7 @@ const Home = () => {
 
           <div className="mt-12 text-center">
             <Link to="/services" className="btn-secondary text-base">
-              <span>View All 8 Services &amp; Maintenance Plans</span>
+              <span>View All 8 Services</span>
               <ArrowRight size={16} />
             </Link>
           </div>

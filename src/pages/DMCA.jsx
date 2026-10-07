@@ -60,6 +60,10 @@ Email: copyright@triole-it.com
         title="DMCA Copyright Policy & Safe Harbor Notice | Triole IT"
         description="Triole IT DMCA Copyright Agent information, takedown request template, counter-notification procedure, and safe harbor compliance under 17 U.S.C. § 512."
         keywords="DMCA policy, copyright agent, takedown notice, 512 safe harbor, Triole IT copyright"
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "DMCA Policy", item: "/dmca" }
+        ]}
         schemaMarkup={dmcaSchema}
       />
 

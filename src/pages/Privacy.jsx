@@ -24,6 +24,10 @@ export default function Privacy() {
         title="Privacy Policy | Triole IT Support & Repairs"
         description="Read Triole IT's comprehensive Privacy Policy. Learn about how we protect your personal information, our cookie practices, and your privacy rights under GDPR, CCPA, and Canadian PIPEDA."
         keywords="privacy policy, data protection, GDPR compliance, CCPA rights, cookie policy, Triole IT privacy"
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Privacy Policy", item: "/privacy" }
+        ]}
         schemaMarkup={privacySchema}
       />
 

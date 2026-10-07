@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import SEO from '../components/SEO';
 import InstagramIcon from '../components/icons/InstagramIcon';
-import { SERVICE_OPTIONS, DEFAULT_CONTACT_SERVICE, MAINTENANCE_PLANS } from '../data/services';
+import { SERVICE_OPTIONS, DEFAULT_CONTACT_SERVICE } from '../data/services';
 import { COMPANY_INFO } from '../data/company';
 
 const Contacts = () => {
@@ -40,13 +40,20 @@ const Contacts = () => {
     "name": `Contact Us - ${COMPANY_INFO.name}`,
     "description": "Get in touch with Triole IT's support team in Vancouver for local IT support, computer repairs, and network troubleshooting.",
     "mainEntity": {
-      "@type": "Organization",
+      "@type": ["LocalBusiness", "ComputerRepairService"],
       "name": COMPANY_INFO.name,
       "url": COMPANY_INFO.website,
       "email": COMPANY_INFO.email,
       "sameAs": [
         COMPANY_INFO.socials.instagram
       ],
+      "areaServed": "Vancouver, BC, Canada",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": COMPANY_INFO.email,
+        "availableLanguage": ["English"]
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": COMPANY_INFO.address.city,
@@ -127,6 +134,10 @@ const Contacts = () => {
         title="Contact Us | Local IT Support & Computer Repairs"
         description="Get in touch with Triole IT's support team in Vancouver. Reach us by email at admin@triole-it.com, book a service inquiry, or follow @triole_it on Instagram."
         keywords="contact IT support, computer repair contact, Vancouver IT company, IT support contact, tech support Vancouver, Instagram @triole_it"
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "Contact Us", item: "/contacts" }
+        ]}
         schemaMarkup={contactSchema}
       />
 
@@ -326,20 +337,11 @@ const Contacts = () => {
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="input-field"
                       >
-                        <optgroup label="Standard IT Services">
-                          {SERVICE_OPTIONS.map((opt) => (
-                            <option key={opt} value={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </optgroup>
-                        <optgroup label="Continuous Retainer Plans">
-                          {MAINTENANCE_PLANS.map((plan) => (
-                            <option key={plan.id} value={plan.name}>
-                              {plan.name} ({plan.price})
-                            </option>
-                          ))}
-                        </optgroup>
+                        {SERVICE_OPTIONS.map((opt) => (
+                          <option key={opt} value={opt}>
+                            {opt}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>

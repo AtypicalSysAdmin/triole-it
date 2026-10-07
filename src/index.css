@@ -804,8 +804,9 @@ button {
 .text-red-400 { color: var(--color-error); }
 
 /* Surfaces & Backgrounds */
-.bg-\[\#09090B\], .bg-\[\#0A0A0C\] { background-color: var(--color-bg-base); }
-.bg-\[\#0D0D10\] { background-color: var(--color-bg-surface); }
+header, .site-header, .header-solid { background-color: var(--color-bg-base); }
+.bg-\[\#09090B\], .bg-\[\#09090b\], .bg-\[\#0A0A0C\], .bg-\[\#0a0a0c\] { background-color: var(--color-bg-base); }
+.bg-\[\#0D0D10\], .bg-\[\#0d0d10\] { background-color: var(--color-bg-surface); }
 .bg-\[\#121216\] { background-color: var(--color-bg-elevated); }
 .bg-zinc-800 { background-color: var(--color-bg-subtle); }
 .bg-zinc-800\/80 { background-color: var(--color-bg-subtle); }

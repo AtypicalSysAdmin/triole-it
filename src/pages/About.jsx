@@ -16,6 +16,21 @@ const About = () => {
     "@type": "AboutPage",
     "name": `About Us - ${COMPANY_INFO.name}`,
     "description": "Learn about Triole IT's mission, values, and our team of friendly tech support experts. Providing reliable, local computer repairs and IT support.",
+    "mainEntity": {
+      "@type": ["LocalBusiness", "ComputerRepairService"],
+      "name": COMPANY_INFO.name,
+      "url": COMPANY_INFO.website,
+      "email": COMPANY_INFO.email,
+      "knowsAbout": [
+        "Computer Repair",
+        "Laptop Screen Replacement",
+        "Data Recovery",
+        "Wi-Fi Network Optimization",
+        "Virus and Malware Removal",
+        "Small Business IT Support"
+      ],
+      "areaServed": "Vancouver, BC, Canada"
+    },
     "publisher": {
       "@type": "Organization",
       "name": COMPANY_INFO.name,
@@ -32,6 +47,10 @@ const About = () => {
         title="About Us | Triole IT Support & Repairs"
         description="Learn about Triole IT's mission, values, and our team of friendly tech support experts. Providing reliable, local computer repairs and IT support."
         keywords="about Triole IT, local IT support, computer repair experts, technology mission, local PC repairs, Vancouver tech help"
+        breadcrumbs={[
+          { name: "Home", item: "/" },
+          { name: "About Us", item: "/about" }
+        ]}
         schemaMarkup={aboutSchema}
       />
 
