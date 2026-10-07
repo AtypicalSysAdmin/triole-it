@@ -158,11 +158,9 @@ export default function Footer() {
             &copy; {currentYear} {COMPANY_INFO.name}. All rights reserved. &bull; Registered in British Columbia, Canada.
           </div>
           <div className="flex flex-wrap items-center gap-4 text-zinc-400">
-            <span>Canadian Copyright Act (Notice &amp; Notice)</span>
-            <span>&bull;</span>
             <Link to="/privacy" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Privacy Policy</Link>
             <span>&bull;</span>
-            <Link to="/terms" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Terms</Link>
+            <Link to="/terms" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Terms of Service</Link>
             <span>&bull;</span>
             <Link to="/dmca" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Copyright Notice</Link>
           </div>

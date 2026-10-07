@@ -68,7 +68,7 @@ const Contacts = () => {
     setFormError('');
 
     if (!formData.isAgeVerified) {
-      setFormError('COPPA/GDPR-K Compliance: You must confirm you are at least 16 years of age (or have parental/guardian consent) to submit an inquiry.');
+      setFormError('Please confirm you are at least 16 years of age (or have parental/guardian consent) to submit an inquiry.');
       return;
     }
 
@@ -209,12 +209,12 @@ const Contacts = () => {
               </div>
             </div>
 
-            {/* Privacy & Wiretap Protection Notice */}
+            {/* Privacy Guarantee */}
             <div className="p-5 rounded-lg border border-zinc-800 bg-[#121215] text-xs text-zinc-400 flex items-start gap-3">
               <ShieldCheck size={20} className="text-purple-400 shrink-0 mt-0.5" />
               <div className="leading-relaxed">
-                <strong className="text-zinc-300 block mb-1">Privacy Guarantee &amp; Input Protection:</strong>
-                All input fields are masked against unauthorized third-party recording scripts. We strictly adhere to COPPA, GDPR, and CASL anti-spam regulations.
+                <strong className="text-zinc-300 block mb-1">Your Privacy is Protected:</strong>
+                We only use your contact details to reply to your inquiry and coordinate your IT service. We never sell, rent, or share your personal information.
               </div>
             </div>
           </div>
@@ -363,7 +363,7 @@ const Contacts = () => {
                     />
                   </div>
 
-                  {/* Mandatory Compliance Checkbox 1: COPPA / GDPR-K Age Affirmation */}
+                  {/* Age Affirmation */}
                   <div className="pt-2">
                     <label className="flex items-start gap-3 cursor-pointer min-h-[44px]">
                       <input
@@ -373,7 +373,7 @@ const Contacts = () => {
                         className="mt-1 h-5 w-5 rounded border-zinc-700 bg-zinc-900 text-purple-600 focus-visible:outline-2 focus-visible:outline-purple-400 shrink-0"
                       />
                       <span className="text-xs text-zinc-300 leading-relaxed">
-                        <strong className="text-white">Age Verification (COPPA &amp; GDPR-K):</strong> I confirm that I am at least 16 years of age (or have parental/guardian consent to submit this inquiry and request IT support services).
+                        I confirm that I am at least 16 years of age (or have parental/guardian consent).
                       </span>
                     </label>
                   </div>

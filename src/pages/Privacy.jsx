@@ -9,7 +9,7 @@ export default function Privacy() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": `Privacy Policy - ${COMPANY_INFO.name}`,
-    "description": "Triole IT Privacy Policy outlining data protection practices, COPPA/GDPR compliance, CCPA disclosures, and Data Subject Access Request mechanisms.",
+    "description": "Triole IT Privacy Policy explaining how we protect your personal information and respect your privacy rights.",
     "publisher": {
       "@type": "Organization",
       "name": COMPANY_INFO.name,
@@ -108,24 +108,24 @@ export default function Privacy() {
               <span>3. How We Route Inquiries &amp; Third-Party Services</span>
             </h2>
             <p className="mb-4">
-              We keep our technology stack minimal, private, and secure:
+              We keep our technology infrastructure minimal, private, and secure:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Static Hosting &amp; Security</h3>
-                <p className="text-sm text-zinc-400">Cloudflare Pages (delivers fast, encrypted HTTPS browsing and protects against denial-of-service attacks).</p>
+                <h3 className="font-semibold text-white mb-1">Cloud Hosting &amp; Edge Security</h3>
+                <p className="text-sm text-zinc-400">Delivers fast, SSL/TLS encrypted browsing and enterprise-grade denial-of-service (DDoS) protection.</p>
               </div>
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Inquiry Form Relay</h3>
-                <p className="text-sm text-zinc-400">FormSubmit.co (securely forwards your contact message directly to our admin@triole-it.com email box).</p>
+                <h3 className="font-semibold text-white mb-1">Secure Form Transmission</h3>
+                <p className="text-sm text-zinc-400">Transmits your inquiry securely directly to our support desk over encrypted HTTPS without storing your messages in public databases.</p>
               </div>
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Self-Hosted Fonts</h3>
-                <p className="text-sm text-zinc-400">Fonts are stored directly in our application code via @fontsource/outfit. Zero IP tracking or calls to Google Fonts.</p>
+                <h3 className="font-semibold text-white mb-1">Locally Bundled Assets</h3>
+                <p className="text-sm text-zinc-400">Typography and assets are packaged directly within our site bundle. Zero third-party tracking or connections to remote font servers.</p>
               </div>
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Direct Email Response</h3>
-                <p className="text-sm text-zinc-400">Replies are sent directly from our Vancouver support team to your provided email address.</p>
+                <h3 className="font-semibold text-white mb-1">Direct Technical Support</h3>
+                <p className="text-sm text-zinc-400">Responses are sent directly from our local Vancouver support desk to your provided email address.</p>
               </div>
             </div>
             <p className="text-sm text-zinc-400">
@@ -167,7 +167,7 @@ export default function Privacy() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <AlertCircle className="text-purple-400" size={22} />
-              <span>5. Children&apos;s Privacy (COPPA &amp; GDPR-K)</span>
+              <span>5. Children&apos;s Privacy</span>
             </h2>
             <p className="mb-3">
               Our IT support and repair services are intended for adults and business operators. We do not knowingly collect personal information from children under 16 without parent or guardian consent.
