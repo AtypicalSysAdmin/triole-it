@@ -97,7 +97,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/dmca" className="flex items-center min-h-[44px] text-zinc-300 hover:text-white transition">
-                  DMCA &amp; Copyright Policy
+                  Copyright &amp; IP Notice
                 </Link>
               </li>
               <li>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <span>{COMPANY_INFO.address.display}</span>
               </li>
               <li className="pt-3 border-t border-zinc-800 text-xs text-zinc-400">
-                <strong className="text-zinc-300 block mb-1">DMCA Copyright Agent:</strong>
+                <strong className="text-zinc-300 block mb-1">Copyright Inquiries:</strong>
                 <a href={`mailto:${COMPANY_INFO.copyrightEmail}`} className="text-purple-300 hover:underline min-h-[36px] inline-flex items-center">
                   {COMPANY_INFO.copyrightEmail}
                 </a>
@@ -158,13 +158,13 @@ export default function Footer() {
             &copy; {currentYear} {COMPANY_INFO.name}. All rights reserved. &bull; Registered in British Columbia, Canada.
           </div>
           <div className="flex flex-wrap items-center gap-4 text-zinc-400">
-            <span>DMCA Safe Harbor &sect; 512(c)</span>
+            <span>Canadian Copyright Act (Notice &amp; Notice)</span>
             <span>&bull;</span>
             <Link to="/privacy" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Privacy Policy</Link>
             <span>&bull;</span>
             <Link to="/terms" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Terms</Link>
             <span>&bull;</span>
-            <Link to="/dmca" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">DMCA Notice</Link>
+            <Link to="/dmca" className="hover:text-zinc-200 underline min-h-[44px] inline-flex items-center">Copyright Notice</Link>
           </div>
         </div>
       </div>
