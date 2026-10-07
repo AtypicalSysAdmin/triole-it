@@ -55,15 +55,15 @@ export default function Privacy() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <FileText className="text-purple-400" size={22} />
-              <span>1. Overview &amp; Our Commitment</span>
+              <span>1. Overview &amp; Our Plain-English Commitment</span>
             </h2>
             <p className="mb-4">
               Triole IT (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates{' '}
-              <a href="https://triole-it.com" className="text-purple-300 underline">https://triole-it.com</a>{' '}
-              providing local IT support, computer repair, and network setup services in Vancouver, British Columbia, Canada.
+              <a href="https://triole-it.com" className="text-purple-300 underline">https://triole-it.com</a>,{' '}
+              providing friendly, local IT support, computer and laptop repairs, and network troubleshooting in Vancouver, British Columbia, Canada.
             </p>
             <p>
-              We are committed to safeguarding your personal data and respecting your privacy rights across all jurisdictions, including the Canadian Personal Information Protection and Electronic Documents Act (PIPEDA), the British Columbia Personal Information Protection Act (PIPA), the European Union General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA as amended by CPRA), and the California Online Privacy Protection Act (CalOPPA).
+              We believe your privacy should be straightforward—no confusing legal traps or walls of text. This policy explains what little information we collect, how we use it to help you, and how your rights are protected under Canadian privacy laws (PIPEDA and BC PIPA), the European Union GDPR, and California privacy standards (CCPA/CalOPPA).
             </p>
           </section>
 
@@ -71,56 +71,65 @@ export default function Privacy() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <Lock className="text-purple-400" size={22} />
-              <span>2. Personal Identifiable Information (PII) We Collect</span>
+              <span>2. What We Collect (And What We Don&apos;t)</span>
             </h2>
             <p className="mb-4">
-              We only collect personal information that is reasonably necessary to fulfill your technical support inquiries, diagnostic assessments, or service repairs:
+              We only collect the information you choose to give us so we can respond to your questions and fix your devices:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-zinc-300">
+            <ul className="list-disc pl-6 space-y-2 text-zinc-300 mb-6">
               <li>
-                <strong className="text-white">Contact &amp; Identification Data:</strong> Full name, email address, phone number, and physical service address for on-site visits.
+                <strong className="text-white">Contact Details:</strong> Your name, email address, optional phone number, and service address if you request an on-site visit in Vancouver.
               </li>
               <li>
-                <strong className="text-white">Device &amp; Diagnostic Details:</strong> Computer hardware specifications, operating system versions, serial numbers, error logs, and issue descriptions provided during service booking.
+                <strong className="text-white">Device &amp; Issue Details:</strong> Device brand, operating system, and a description of the technical problem you need help with.
               </li>
               <li>
-                <strong className="text-white">Technical &amp; Log Data:</strong> Anonymized IP addresses, browser types, device types, and referring URLs collected automatically for server security and denial-of-service prevention.
-              </li>
-              <li>
-                <strong className="text-white">Payment &amp; Billing Data:</strong> Transaction records, invoice history, and billing addresses. Credit card details are processed directly by our certified payment processor (Stripe) and are never stored on Triole IT servers.
+                <strong className="text-white">Basic Technical Logs:</strong> Standard, anonymous web logs (like browser type and general device type) collected by our static hosting provider to maintain site security and prevent spam.
               </li>
             </ul>
+            <div className="p-4 rounded-lg bg-[#18181c] border border-purple-500/30 text-sm space-y-2">
+              <p className="text-white font-semibold">What We Do NOT Collect On This Website:</p>
+              <p className="text-zinc-300">
+                &bull; <strong className="text-white">No Payment Card Data:</strong> This website does not process, handle, or store credit card numbers. Service fees are billed and paid upon completion of work (via Interac e-Transfer, cash, or in-person invoice).
+              </p>
+              <p className="text-zinc-300">
+                &bull; <strong className="text-white">No User Accounts or Passwords:</strong> You do not need to create an account, password, or profile to use this site.
+              </p>
+              <p className="text-zinc-300">
+                &bull; <strong className="text-white">No Invasive Session Tracking:</strong> We never record your screen, track your keystrokes, or monitor your private browsing.
+              </p>
+            </div>
           </section>
 
           {/* Section 3: Third-Party Processors */}
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <UserCheck className="text-purple-400" size={22} />
-              <span>3. Third-Party Data Processors &amp; Service Providers</span>
+              <span>3. How We Route Inquiries &amp; Third-Party Services</span>
             </h2>
             <p className="mb-4">
-              We partner with trusted third-party providers strictly for transactional fulfillment, payment gateway processing, website hosting, and customer communications:
+              We keep our technology stack minimal, private, and secure:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Hosting &amp; DNS</h3>
-                <p className="text-sm text-zinc-400">Cloudflare Pages &amp; Vercel (Edge DNS and SSL protection).</p>
+                <h3 className="font-semibold text-white mb-1">Static Hosting &amp; Security</h3>
+                <p className="text-sm text-zinc-400">Cloudflare Pages (delivers fast, encrypted HTTPS browsing and protects against denial-of-service attacks).</p>
               </div>
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Payment Gateways</h3>
-                <p className="text-sm text-zinc-400">Stripe Payments (PCI-DSS Level 1 compliant processing).</p>
+                <h3 className="font-semibold text-white mb-1">Inquiry Form Relay</h3>
+                <p className="text-sm text-zinc-400">FormSubmit.co (securely forwards your contact message directly to our admin@triole-it.com email box).</p>
               </div>
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Fonts &amp; Assets</h3>
-                <p className="text-sm text-zinc-400">Self-hosted via npm (@fontsource/outfit). Zero remote Google Font calls.</p>
+                <h3 className="font-semibold text-white mb-1">Self-Hosted Fonts</h3>
+                <p className="text-sm text-zinc-400">Fonts are stored directly in our application code via @fontsource/outfit. Zero IP tracking or calls to Google Fonts.</p>
               </div>
               <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800">
-                <h3 className="font-semibold text-white mb-1">Email Infrastructure</h3>
-                <p className="text-sm text-zinc-400">Transactional mail delivered over TLS 1.3 encrypted SMTP.</p>
+                <h3 className="font-semibold text-white mb-1">Direct Email Response</h3>
+                <p className="text-sm text-zinc-400">Replies are sent directly from our Vancouver support team to your provided email address.</p>
               </div>
             </div>
             <p className="text-sm text-zinc-400">
-              Each processor operates under formal Data Processing Addenda (DPAs) binding them to confidentiality and strict non-disclosure obligations.
+              We never sell, rent, or trade your personal details to any marketing company or data broker.
             </p>
           </section>
 
@@ -128,20 +137,20 @@ export default function Privacy() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <Cookie className="text-purple-400" size={22} />
-              <span>4. Cookies, Session Trackers &amp; User Autonomy</span>
+              <span>4. Cookies &amp; How We Respect Your Choices</span>
             </h2>
             <p className="mb-4">
-              Our website uses strictly necessary technical cookies to facilitate site security, routing, and user interface preferences. We adhere to an explicit opt-in model:
+              We only use necessary cookies required for our website to function properly and remember your preferences:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-zinc-300 mb-6">
               <li>
-                <strong className="text-white">Prior Consent Architecture:</strong> Analytical trackers, marketing cookies, and third-party scripts remain deactivated until you provide affirmative consent.
+                <strong className="text-white">Essential Only:</strong> We save a simple preference flag in your browser so we don&apos;t keep asking for your cookie preferences on every single page.
               </li>
               <li>
-                <strong className="text-white">Session Recording Protection:</strong> We do not deploy invasive screen capture or keystroke recording scripts.
+                <strong className="text-white">No Hidden Trackers:</strong> We do not load advertising pixels or third-party tracking cookies without your permission.
               </li>
               <li>
-                <strong className="text-white">Persistent Controls:</strong> You may modify your consent selections or revoke prior approvals at any moment.
+                <strong className="text-white">You Are in Control:</strong> You can review or change your cookie settings anytime with a single click below.
               </li>
             </ul>
             <button
@@ -158,14 +167,15 @@ export default function Privacy() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <AlertCircle className="text-purple-400" size={22} />
-              <span>5. Children's Online Privacy Protection (COPPA &amp; GDPR-K)</span>
+              <span>5. Children&apos;s Privacy (COPPA &amp; GDPR-K)</span>
             </h2>
             <p className="mb-3">
-              Our website and IT repair services are directed strictly toward adult consumers and business operators. We do not knowingly solicit or collect personal information from children under the age of 16 (or under 13 in the United States).
+              Our IT support and repair services are intended for adults and business operators. We do not knowingly collect personal information from children under 16 without parent or guardian consent.
             </p>
             <p>
-              If we discover that personal data of a minor has been collected without verifiable parental consent, we will promptly delete that information from our active records. If you believe a minor has submitted inquiries to us, please notify us immediately at{' '}
-              <a href="mailto:privacy@triole-it.com" className="text-purple-300 underline">privacy@triole-it.com</a>.
+              If a minor has sent an inquiry through our site by accident, please let us know at{' '}
+              <a href="mailto:privacy@triole-it.com" className="text-purple-300 underline">privacy@triole-it.com</a>{' '}
+              and we will immediately delete that information from our records.
             </p>
           </section>
 
@@ -176,16 +186,15 @@ export default function Privacy() {
               <span>6. California Privacy Rights (CCPA/CPRA &amp; CalOPPA)</span>
             </h2>
             <p className="mb-3">
-              Under the California Consumer Privacy Act of 2018 (as amended by CPRA), California residents possess specific statutory rights regarding their personal data:
+              If you reside in California, state laws provide specific rights regarding your personal data:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-zinc-300 mb-4">
-              <li><strong className="text-white">Right to Know:</strong> Request disclosures of specific personal information categories collected, sold, or shared in the preceding 12 months.</li>
-              <li><strong className="text-white">Right to Delete:</strong> Request erasure of personal data held by us, subject to statutory record-retention exemptions.</li>
-              <li><strong className="text-white">Right to Opt-Out:</strong> Direct us not to sell or share your personal data for cross-context behavioral advertising.</li>
-              <li><strong className="text-white">Right to Non-Discrimination:</strong> We do not offer differential pricing or diminished service levels if you exercise privacy rights.</li>
+              <li><strong className="text-white">Right to Know:</strong> You can ask what personal information we have received from you.</li>
+              <li><strong className="text-white">Right to Delete:</strong> You can ask us to permanently delete any contact inquiries you submitted.</li>
+              <li><strong className="text-white">Right to Non-Discrimination:</strong> We will always provide the same friendly service regardless of whether you exercise privacy rights.</li>
             </ul>
             <p className="p-4 rounded-lg bg-[#18181c] border border-purple-500/30 text-sm text-purple-300">
-              <strong>Notice of Non-Sale:</strong> Triole IT has not sold and will not sell any consumer personal information for monetary value or valuable consideration.
+              <strong>We Do Not Sell Your Data:</strong> Triole IT has never sold, and will never sell, your personal information for money or any other commercial consideration.
             </p>
           </section>
 
@@ -193,19 +202,19 @@ export default function Privacy() {
           <section className="card-surface p-6 sm:p-8">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
               <CheckCircle2 className="text-purple-400" size={22} />
-              <span>7. Exercising Data Subject Rights &amp; Contact</span>
+              <span>7. How to View, Edit, or Delete Your Data</span>
             </h2>
             <p className="mb-4">
-              To exercise your access, correction, deletion, or portability rights under PIPEDA, GDPR, or CCPA, please contact our designated Privacy Officer:
+              Whether you are covered by Canadian PIPEDA, the European GDPR, California law, or just want peace of mind, you can reach out to us anytime to view, correct, or delete your contact records:
             </p>
             <div className="p-4 rounded-lg bg-[#18181c] border border-zinc-800 text-sm space-y-1.5">
-              <p><strong className="text-white">Triole IT Privacy Officer</strong></p>
-              <p>Email: <a href="mailto:privacy@triole-it.com" className="text-purple-300 underline">privacy@triole-it.com</a></p>
-              <p>General Admin: <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a></p>
-              <p>Physical Location: Vancouver, British Columbia, Canada</p>
+              <p><strong className="text-white">Triole IT Privacy Desk</strong></p>
+              <p>Privacy Email: <a href="mailto:privacy@triole-it.com" className="text-purple-300 underline">privacy@triole-it.com</a></p>
+              <p>General Inquiries: <a href="mailto:admin@triole-it.com" className="text-purple-300 underline">admin@triole-it.com</a></p>
+              <p>Location: Vancouver, British Columbia, Canada</p>
             </div>
             <p className="mt-4 text-xs text-zinc-400">
-              We respond to all verified consumer requests within 30 days (or 45 days under CCPA rules) free of charge.
+              We respond to all verified requests promptly within 30 days, free of charge.
             </p>
           </section>
         </div>
