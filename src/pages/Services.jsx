@@ -6,6 +6,7 @@ import { SERVICES } from '../data/services';
 import { COMPANY_INFO } from '../data/company';
 
 const Services = () => {
+  //seo
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
